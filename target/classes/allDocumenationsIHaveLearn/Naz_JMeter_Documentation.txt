@@ -1,0 +1,457 @@
+
+
+
+
+							LECTURE 01 - Performance testing
+							
+
+	=>	Performance testing is a type of testing to ensure software application is running
+		well in a particular work load.
+		
+		->	Load testing is the simplest form of Performance testing.
+		
+		For example , I have an e-commerce web site where I am providing a black Friday 
+		deal. I have advertise in various platforms such a in social media, tv. So, customers
+		are attracted and wants to purchase numerous products in that particular offer day.
+		So, let's think around 10 thousands users and trying to purchase some specific 
+		products. But my server couldn't take the load and it crashed. Here the performance
+		testing comes into pictures.
+		Before lunching our updated application for black Friday offer, we have designed 
+		our code and server in such a way that it can handle thousands of users in seconds.
+		And to verify that, we will use some tools to test our application that it can 
+		take the load of thousands of users in a single time. JMeter is a such tool by which
+		we can check how many users can interact in our web site, how much load that 
+		application can take.
+		
+		
+							LECTURE 02 - Why JMeter
+							
+		=>	JMeter is developed in Java , So you can use it in any platform such as 
+			windows, mac, linux.
+			
+		=>	Download JMeter binary .tgz form from there official web site.
+		
+		=>	Now go to the JMeter/bin/jmeter.sh and drop this folder in your terminal
+			it will start the JMeter in your system (For Mac OS).
+						
+						
+							LECTURE 03 - 
+						
+		Test plan - test plan consists of all the actions and components that you need to
+		execute your performance test.
+			
+			
+			
+							LECTURE 06 - Recording the test.
+							
+		
+		We can record our test and we can run the same test again. To do that
+		
+		1)	Right click on "Test Plan" -> Add -> Non- Test Elements
+					 -> HTTPS Test Script Recorder.
+					 
+		2)	Make sure the port is -> 8888.
+		
+		3)	In "Test Plan Creation"  see "Target Controller"  make it 
+			"Test Plan -> HTTP(S) Test Script Recorder.
+		
+		4)	Then next to "Test Plan Creation" is "Request Filters" click on that 
+			Then, in the bottom "Add suggests Excludes" this will exclude any kind of 
+			image or css and other files not to test for performance.
+	
+							
+			
+							LECTURE 07 - FireFox and JMeter Settings
+							
+		In Firefox, option setting -> general- Network setting
+		
+		Then make It "Manual Proxy Configuration" 
+		Where HTTP proxy and HTTPS proxy will be local host (127.0.0.1)
+		and port is "8888".
+		
+		=>	Now, when we will start our JMeter To record it will show a Apache Certificate
+			has been created in you Jmeter's bin folder
+			
+		=>	Now, in Firefox go to settings, search for certificate.
+			View Certificates -> Authorities -> Import -> import the certificate 
+			 from JMeter "bin" folder.
+			 
+		=>	Now, in your JMeter, start the "Test Script Recoder" then go to the browser
+			perform your operation such as go to "blazedemo.com" select country, Now, if you
+			come to your JMeter, you will see the scripts is recording all the operations
+			that we have perform in web browser to see the performance. 
+			
+			
+			
+							LECTURE 08 - Chrome and BlazeMeter Settings
+							
+							
+		
+		=>	Add BlazeMeter extension in Chrome browser.
+		=>	Open an account then start record your test.
+		=>	Then  save that file as ".jmx" format
+		=>	Open that file in JMeter. Then you will see the results.
+		=>	
+			
+							LECTURE 09 & 10 - Thread Group
+							
+		=>	Thread group is how many users I want to play the same scenario.
+		
+		=>	In "Test Plan" 
+			Add -> Thread Group 
+			
+			-> Give a name 
+			-> Number of Threads - ( how many users)
+			-> Ram up Period - put seconds ( such as I put 5 seconds for 100 users so
+											each  second 20 users will try to hit )
+											
+			-> Loop Count - such if I put 5 all the above 100 users will do the same 
+							thing for 5 times. which means 500 
+							
+			-> Duration - for how long you want to run this operations Such as 30 seconds
+						  So,
+						  
+						  Lecture 11 - Listeners
+						  
+			
+		=>	Now, we need to add listeners which means how we wan to see our results
+			There are so mane reports but among them View tree results, Aggregate result
+			& graph results is popular.
+			
+			
+			->	Now, go to the Thread group, right click
+				Add - Listeners - View tree results.
+				
+				We can add as many report we want.
+				
+				
+		[MAKE SURE]
+		
+		Before adding a big thread load such as 100 or 1000 users, first check with 1 user
+		by adding in thread group and check with view Tree results. Because if your tests 
+		has error then there is no point to run the test for 100 times. 
+		
+		SUCCESS CODE 200 - IS NOT ALWAYS exact response
+		
+		When our test gets pass in view tree results , we see the code 200 which means pass.
+		But it can show the different message for an example
+		
+		our test is to "Add Employee" and we will get a message "Employee is added" & 200
+		success code. But if we add the same employee ID, it can show "The employee is 
+		already exists" and the success code which is also 200. But the response message 
+		is different.
+		
+							LECTURE 12 - Aggregate Report
+							
+	In aggregate report there are some features to look up.
+					
+			->	Samples - Number of users hit that specific request.
+			
+			->	Average - It is the average time taken by all the samples to execute 
+				specific. 
+				
+			->	Min - The shortest time taken by a sample for specific label.
+			
+			->	Max - The longest time taken by a sample for specific label.
+			
+			->	Throughput-  Throughput is the number of request that are processed 
+				per time unit(seconds, minutes, hours) by the server. This time is 
+				calculated from the start of first sample to the end of the last sample.
+				Larger throughput is better. Such as , users hit the "submit" button
+				2000 times and 124/ second. which means server has handled 124 "submit"
+				in 1 second.
+				
+				
+				Graph
+				
+				IN Graph the throughput should always increase and the st. divation should
+				should always increase.
+				
+				In average graph- st. diviation should be half less then average and 
+				throughput should be always high than average.
+										
+			
+			
+			
+			
+							LECTURE 14 - Thread Group Plugin
+							
+		
+		We have seen Thread group in our JMeter. We can bring different kinds of 
+		Thread group from "https://jmeter-plugins.org/wiki/PluginsManager/"
+		
+		-> Go to that web site
+		-> download the Jar file 
+		-> put that in your JMeter folder ext which in lib/ext
+		-> restart JMeter , you will see when you will 
+		   "add" -> Threads (Users) -> you will see different kinds of Thread Groups now.
+		   
+		   
+		   
+		   					LECTURE 15 - Concurrency & Ultimate Thread Group
+		   	
+		   	Concurrency Thread group
+		   	
+		   		-> Total Concurrency (60) - Total 60 users
+		   		-> Rump up time (30)	 - So in 20 seconds there will be all the users
+		   								   active in server.
+		   		-> Rump up steps count(3) - So, 60/3 = 20 users in first 10 seconds, then
+		   										20 users in 2nd 10 seconds, and 20 users
+		   										in 3rd 30 seconds.
+		   		-> Hold target time (180) - so for 180 seconds 60 users will be in the 
+		   									server.			
+		   	
+		   	Ultimate Thread Group
+		   		-> Start Thread Counts(50) - how many users (50) in web site will come
+		   		-> Initial delays (5) -  5 seconds delay to start the users to hit server
+		   		-> Start up time (30) - In 30 seconds all the users we be in web site.
+		   		-> hold Load for seconds (60) - 50 Users will be in the server for 60
+		   										seconds.
+		   		-> Shutdown time (10) - How slowly the Users will go way from the server.
+		   								In 10 seconds all the users will go away.
+							
+						
+						
+						LECTURE 16 & 17 - Session cookies.
+						
+			Cookies will help you to identify uniquely to the application.
+			
+			Suppose when I log in to the face book , I can traverse in my profile, pictures
+			friends. But How the face book know I am expecting that profile, picture,
+			friends of that particular person.
+			
+			BECAUSE, When we log in, the web application ( face book) always attach a 
+			session cookies with my browser so that face book can identify me as a unique
+			users.
+			
+			Now, in JMeter when we will record the script, JMeter will not have the session
+			cookies. We need to attach with JMeter. So JMeter will act as a browser.
+			
+			So, in specific Thread which I want to run
+			there is Add- Config Element- HTTP Cookie Manager.
+			After doing So, you Can run log in pages performance by your JMeter.
+			
+			
+						
+						LECTURE 18 & 19 - ASSertions in JMeter.
+						
+			So, Suppose our test can show pass , can show 200 response code even the 
+			response message is wrong.
+			
+			So, we put put assertions in response body, code anything by JMeter
+			
+			to Put assertions, first run the thread group for just 1 user.
+			then in the requests pages, such as log, authentication in specific 
+			request 
+		1)	Add- Assertions- Response Assertions or JSON Assertions or Xpath Assertions
+			
+		2)	Response Assertions =
+			
+			-> click on "Text response"
+			-> copy the response message or put the response message that we want.
+			   run the test.
+			   
+			 -> Again add an Response Assertions 
+			 
+			  Now, click on "Response Code"
+			   - put 200.
+			   
+			   
+		3)	 We can put the assertion results in Thread.
+			 
+			 Thread - Add - Listeners - Assertions Result
+			 
+			 Here, we can see the results of assertions if they are passed there will be 
+			 no error.
+			 
+			 
+			 
+			 			LECTURE 19 - Size Assertions
+		
+		Size Assertions:
+			 			
+		- When we want to check the response size , we can use Size assertions,
+		
+			-> In Specific request 
+			
+			Add -> Assertions -> Size Assertions.
+			
+			Now we can give, that our response can be < or > or <= or >= 
+			
+		Duration Assertions:
+		
+		It's for How much time it takes to load a request. We can put an assertions
+		that the request should not load more than load than 200 miliseconds.
+		
+		
+		
+						LECTURE 20 & 21 - Controller
+						
+		Controller are nothing but containers which holds specific samplers for a certain
+		functionality.
+		In JMeter we call the requests as sampler.
+		
+		Suppose, there is booking flight scenarios ,
+		
+		First let's under stand, Login is a module where we provide user name and password
+		
+		2nd, search for light, select the flight is a module.
+		
+		then provide the details of passengers and credit card is another final module.
+		 
+		 So there are 3 module and let's think each module has 3-4 requests(samplers)
+		 
+		 Here the controller comes to into picture, we will store each module in a 
+		 Controller and will give the name of each controller.
+		 
+		 There are different kinds of controllers in JMeter such as 
+		 transaction Controller, While Controller , If controller , loop controller.
+		 
+		 1) Create a new test plan.
+		 2) Add - Non Test Element - HTTPS Script Recorder.
+		 3) this time in "HTTP(S) Test Script Recorder" make the 
+		 	"Test Plan Creation" into "Use Recording Controller" instead of 
+		 	" Learn Test Plan -> HTTP(S) Test Script Recorder"
+		 	
+		 4)	Create a new Thread Group "Thread Group For Controller"
+		 5) In "Thread Group For Controller" 
+		 	Add -> Logic Controller - Recording Controller
+		 
+		 In recording  controller we will record each scenarios, such for log in,
+		 
+		 We go to the website , put email and password then log in. This is a controller
+		 
+		 Then, search the product add to the cart , this can be a controller,
+		 Then, give address , credit card details then purchase this can be a controller.
+		 
+		 6)	So, In thread group 
+		 
+		 	Add -> Logic Controller -> Transaction Controller ( give a name like login Controller)
+		 	
+		7)	Now, from recording controller copy all the steps and paste it in 
+			Transaction controller ( log in controller), 
+		8)	Now, create another transaction controller name ( product add to cart controller)
+			From web site, now perform, search product, add to cart then stop and go to the
+			recording controller. Copy all the sampler steps and paste it in 
+			"product cart controller"
+		9)	Now, create another controller in thread group, give name (purchase controller)
+			
+			From the web site we were in product add to cart steps right? Now give credit 
+			card details, address then purchase button click and stop.
+			
+			This steps will be recorded in "record controller" then copy the steps and paste it 
+			into the new Transaction controller( )
+			
+		
+		Now, 
+		add reports into the thread group (view tree results & aggregate report)
+		Then run the results, 
+		we will see that it showing each samplers name and there controller name such as
+		"log in controller", purchase controller.
+		
+		Now, 
+		From controller if we click on "genrate parent sampler" it will show the report 
+		for the controller not the child samplers. because log in a functionality right?
+		So, its giving the report for log in functionality
+		
+		
+		Transaction Controller
+					
+					=>	When we run a functionality such as log in, add product to cart
+						we can treat them as a transaction. So, in Thread group
+						we can create a "recording controller" which record our steps
+						then we can cut and paste it in "transaction controller" for use
+						So "Log In controller" with name we understand this controller
+						perform log in functionality.
+						
+		
+		Module Controller
+					
+					=>	 Such as, I have 10 Controller in my Thread group but I want to run a 
+					specific controller for few more times to perform a task 
+					then we can create a Module controller where we will indicate only the 
+					controller which I want to run only.
+						
+							
+		InterLeave Controller
+		
+					
+					=>	In InterLeave Controller there can be multiple transaction controller 
+						or any other controller	or samples which will iterate according to the
+						loop count we will provide in our thread group. Such as In InterLeave
+						Controller there are 3 transaction controller and in my thread group
+						there are log in controller , purchase controller and that InterLeave
+						controller.
+						
+						So, When I will run I will see that log in will run for 3 times, purchase
+						for 3 times but after login purchase there will be on InterLeave
+						controller, then login and purchase again then another Interleave 
+						controller2 then log in , purchase again and the last InterLeave 
+						controller. So, the login 3 times, purchase 3 times and in each iteration
+						one InterLeave controller has been picked ( the InterLeave controllers
+						 go in orders such as 1st one, then 2nd one, then final one)
+									
+						
+						
+		RunTime Controller
+		
+					=>	In, Run time controller we put a controller and tells to run it for
+						certain times (seconds ) then it will go to the next controller.
+						
+					
+					Create a Run time controller in thread group. Inside runtime controller
+					put a transaction controller ( its up to you ) then run it for 
+					10 seconds. You will see it is running alone for 15 seconds then going to the
+					next one.			
+						
+		Random Controller
+		
+					=>	Let's think a customer in his banking app, sometimes he can make
+						credit card payments, sometimes he can see the statements, sometimes
+						he can check the credit card due date. So here customers can do 
+						anyone of this without going through any order. Here the RunTime
+						controller comes into picture. When we run the Thread it will pick
+						randomly one by one. 
+						
+						The Only difference between Random Controller and InterLeave Controller
+						InterLeave, picks according to the order whereas Random Controllers
+						go though any random pick up.
+						
+		IF Controller
+		
+					=>	When we want to execute any controller or samplers base on a condition, 
+						that time we call the IF controller. 
+						
+					=>	Create An If controller in Thread group
+					
+						Thread Group -> Add -> Logic Controller - If Controller
+						
+						We can put any samplers or controller inside this if controller.
+						Once we go to the If controller, we will be landed in a script page
+						where we need to write , true or false statements.
+		
+		
+		Loop Controller
+					
+					=>	It will execute for a certain time that we to run. such as I want to 
+						run the log in controller for 5 times, so I will create a Loop
+						controller where it will only execute the Log in controller for 
+						5 times where I mention in thread group "group count is 1" which mean
+						every thing will execute for 1 time and log in for 5 times.
+						
+						
+						If I mention "Thread group "group count is 2" all the controller will be
+						run for 2 times but the log in will run for 10 times because in thread
+						we mention 2 times and in loop controller we mention for 5 times
+						So all together it will run 5*2 = 10 times.
+						
+						
+						
+										LECTURE 27 - Timers
+										
+										
+										
+		
+		
+		
+		

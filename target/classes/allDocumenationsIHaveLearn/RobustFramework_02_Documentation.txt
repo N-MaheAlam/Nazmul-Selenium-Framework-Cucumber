@@ -1,0 +1,343 @@
+
+
+
+			"""""""""""" LECTURE 151 """"""""""""""
+			
+
+-	To create an UI Automation with SELENIUM, First Create a Project which is 
+	MAVEN. So, MAVEN gives us  skeletons of different kinds of project such as
+	Spring Boot, Testing ( archetype-quickstart) and so on. Here, skeleton means
+	MAVEN provides different kinds of structures for different kind of project
+	(MAVEN creates some automatic folders so that we can separate our codes
+	such as which one is  main class, which one is child class, interfaces,
+	abstract classes, different files like text files, JSON files, xml (pom.xml),
+	putting everything is a structure way.
+	
+	
+	1)	Create a maven project which will be ( "maven-archetype-quickstart" it's
+		and Artifact Id).
+	
+	2)	Now, provide the "Group id"[TestingProject] & "Artifact Id" 
+		[SeleniumFramework01] when building 
+		the project.
+		Group is like such as a you have company of Selenium & there are 
+		selenium-java, selenium-python, selenium-ruby. So, artifact Id is as a
+		sub child of main parent company "Group" such as selenium- java
+	
+	2)	in pom.xml bring the "selenium java " and "TestNG"  from maven repository
+		web site (make sure
+	 	the testNG version is working properly otherwise use a lower version one.
+	 	and put them in "dependencies" tag.
+	
+	
+				"""""""""""" LECTURE 153 """"""""""""""
+				
+	3)	As the browsers are always updated by the system automatically but the 
+		driver is not get updated because it does not have any automatic system.
+		so we need to bring the "WebDriverManager " from maven repository
+		 website  and put it in our projects "pom.xml" file.
+		& the call the WebDriver class in test class into the following way 
+		
+		(code)	-> WebDriverManager.chromedriver().setup();
+		 
+		This above code calls the chrome driver automatically when we initiate 
+		the browser through selenium.
+		
+		
+		SOMETIMEs You will notice that your program is not Working because of Java
+		 run time error. 
+		 So make sure your install the latest JDK and project the project 
+		 goto
+		 ProjectName->Properties-> Java Compiler -> "java build path" 
+		 -> Libraries-> JRE System Library -> edit -> change execution environment
+		
+				"""""""""""" LECTURE 158 """"""""""""""
+				
+				
+	PAGE OBJECT PATTERN
+	
+	
+	Suppose in my UI test there are 100 tests, and 200 locators. So, if we define
+	locators in 100 test classes, may be tomorrow the locators have changed. For
+	this , we need to update 100 test cases which can create an issue. But if we 
+	define our locators in single place then we can use it but there is also a 
+	problem. Such as my 20 test classes need login ID & password, So I will put 
+	the log in id & password in separate files. But tomorrow there can be other 
+	locators such as for home page, product catalogue and so on. If we put them 
+	all in a single place it will also create a messy situation. Sometimes, to 
+	update or change any thing we need to go through the whole class(place).
+	Now, the page object pattern comes to picture. For log in page we will put 
+	all the locators in login pattern class, for home page locators we will put
+	all the locators in home page pattern, for product catalogue page we will put
+	all the locators in product catalogue page pattern. So that, next time if we
+	need to update any locators for a page, we can go to the pattern class for 
+	that page and change it.
+	
+			
+					"""""""""""" LECTURE 159 """"""""""""""
+		
+	->	Create a new package for Storing Page Object Class 
+		"RobustFramework_02.testClasses.pageObjectPattern"
+	-> Create a new class inside the package "Landing_Page_Log_In"
+		
+		GO to the Landing_Page_Log_In, see the comments on above and inside the 
+		constructor		
+		 see the comments 29 to 35.
+	
+				
+				"""""""""""" LECTURE 160 """"""""""""""
+	
+	-> Create a new class "CalaloguePage_POP"  inside the 
+		"RobustFramework_02.testClasses.pageObjectPattern"
+		
+		Where we will put all the locators 
+		of Catalogue page. 
+		
+	
+				"""""""""""" LECTURE 161 """"""""""""""
+	
+	One of the main rule of any framework is if anything you have is reuseable , make
+	sure you have it in a proper class and reuse it across all your test cases without
+	duplicating the code again & again. 
+	
+	->	Create a new package called 
+		"RobustFramework_02.testClasses.AbsractComponentForPageObectClasses"
+	
+	->	Inside that package create a new class "ReuseableAbstractComponents"
+		This class will be the parent class for all the page object class because 
+		that will hold all the reuse able staffs.
+		
+	->	We can use the properties of that reuse able class in all the classes by
+		creating objects but that will over head memory. we will use concept
+		inheritance.
+	->	Remember Page Factory is for driver.findElement() or findElements() not for 
+		By.locator() 
+		
+				"""""""""""" LECTURE 162 """"""""""""""
+				
+				
+	->	Can you apply page factory inside a web element ( scope of the web element is
+		in a particular position or area not entire page) ?
+		
+		Answer: No, its not possible.
+		
+		
+				"""""""""""" LECTURE 163 """"""""""""""
+				MUST WATCH from middle
+				
+		
+				"""""""""""" LECTURE 164 """"""""""""""
+				
+	->	Now, we can see that the HOME, ORDERS, CART, SIGN OUT is present in all pages.
+		So, means it is reuse able in all places. So, we are going to add such as 
+		click home button, click cart, click orders in "ReuseableAbstractComponents" 
+		
+	
+	ERROR HANDLING:-
+	
+	->	If you face any error in any line, first check the locators value(xpath,css)
+	->	Used the right method.
+	-> 	check Page Object Method, are you sending Web Element or By element. compare.
+	->	check the proper placing argument in method.
+	
+				"""""""""""" LECTURE 166 """"""""""""""
+				
+	->	Suppose for page object classes we created a base class 
+		(ReuseableAbstractComponents). Remember, after any package if we put(.) dot
+		then a name there will be a sub folder of that name such as 
+		(RobustFramework_02.AbsractComponentForPageObectClasses) in RobustFramework_02
+		package there will be a sub folder AbsractComponentForPageObectClasses if we 
+		go to source to check.
+		"/Users/nazmulmahealam/eclipse-workspace/SeleniumEndToEndAutomation/src/main
+		/java/RobustFramework_02/AbsractComponentForPageObectClasses"
+		
+	->	Now, for page object classes, we created a base class so that the page object 
+		classes can use some reuse able features ( methods, global locators)
+		
+		Same for test classes, all the test classes will use some reuse able test 
+		features such as driver implementation, url of the web site and so on.
+		
+	->	Create a package "RobustFramework_02.baseClassForTest" where automatically will be
+		a sub folder with the name "baseClassForTest" if we go to the properties we can 
+		see the location is separated with this name.
+	
+	->	So change the name of "RobustFramework_02" package inside the test/java  into 
+		"RobustFramework_02.testClasses" so all the test will be go to in a sub folder
+		"testClasses".
+	
+	->	Check the "Base Test" class to see all the comments related to the code
+	
+	->	In java there is a class called "Properties" which can read any "properties" files.
+	
+	->	Now, in main/java create a new package "RobustFramework_02.resources" which will 
+		have a sub folder "resources".
+		
+	->	in resources folder create a file name with "properties" extension 
+		"GlobalData.properties". Properties class can parse this file and can extract all 
+		the global values.
+		
+		
+						"""""""""""" LECTURE 167 """"""""""""""
+						
+						
+	->	We have created a method in BaseTest class name "lunchApplication()" which we will 
+		call in every Test as we have to lunch the browser and hit the URL to go the web
+		page. just check the method.
+		
+	->	Convert the test method into TestNG method.
+	
+	->					
+	
+						"""""""""""" LECTURE 168 """"""""""""""
+						
+	->	Create a new test class for log in error validation 
+		"E2ELogInErrorValidationTestCase_02".
+	
+	->	As we are doing this in landing page, Now go to the Landing_Page_Log_In_POP_Page_01
+		class to define a web element which is for incorrect email or password message.
+		and also define the method to grab the text.
+		
+					
+						
+						"""""""""""" LECTURE 169 """"""""""""""
+						
+									"TEST STRATEGY"
+									
+									
+	->	Suppose, for your automation there will be 100 test cases.So, will you create 
+		100 java classes for 100 test cases? No, right which is not good.
+	
+	->	Suppose for login page validation, checking the log in text, email text, forgot
+		password text, will you create separate class for each test case or you will
+		just define a class such as "login_text_validation" then put these test cases
+		one by one with "@Test" annotation.
+		
+		same for such as product page, we can define a class such as for add product 2 ,
+		product 3, product 4 we can define each test case as a "@Test".
+		
+		So, whenever developer will make changes anything we don't need to run all the 
+		test cases. Just run the test cases that is related for that changes such did
+		the developer changes in validation, or in text, or in a functionality.
+		
+		There is no specific logic for that. You need to sit with your developer team,
+		see the system architecture, requirements , test cases then you will decide 
+		how you will merge all the test cases. 
+		
+		
+	->	Each method represents 1 test case if you mark them "@Test" annotation
+	
+	
+	->	Add a new test(method) in class "E2ELogInErrorValidationTestCase_02" which is 
+		"productNameValidation" which will check the product name that it will 
+		extract and the name that we have given into the parameter.
+		
+	->	Convert the project into a TestNg.xml file 
+	
+	->	Now, for each class create a separate test in testng.xml file and give a proper
+		name to each test so that we can get a good test report.
+	
+			
+			
+						"""""""""""" LECTURE 170 """"""""""""""
+	
+	
+	->	Suppose when I add product in my cart , I just want to check in my order page
+		is there any product which I added in my CART. which means order checking is 
+		depending on that we have add the product in cart.
+		
+	->	Now, create a method in "E2EProductAddingTestCase_01" class , "orderHistoryCheck"
+		which is depends on its first test.
+	->	provide dependsOnMethod in "@Test" annotation.
+	
+	->	Now, as when we click on order button it directs us to the order page but for 
+		every page the header is common where home, order, cart button present.
+		So, put the order click web element and method in "reuseableAbstractCoponent" class
+		
+		then create a new order class where define the list of orders web element.
+		then run a stream method which will collect the name of that order and match 
+		with the methods return type . Go to the Order page you will see.
+		
+	->	Now, implements the method in @Test then trigger the run button you will see.
+		
+	
+						"""""""""""" LECTURE 171 """"""""""""""
+						
+	-> 	So, the test runs in sequence mode but if we want to run all the test together 
+		in parallel, in testng.xml file we put  in suite level [parallel ="test"] thats 
+		all.
+		
+	->	we can also run methods in parallel just put the name "methods" instead of 
+		"tests".
+	->	[thread-count "5"] in test level in testng.xml file which means 5 browsers
+		can be opened to run your tests at a time.
+		
+	->	"groups" when you try to run some specific tests(method) from all the java classes
+		those time we use groups.
+		
+		
+	->	"alwaysRun= true" we use this terms in some @Before @After method or class or test
+		because sometimes when we will try to run only a specific group those time some
+		mandatory methods or test will be skipped for which the test will fail. Some 
+		conditions I mean methods are mandatory such as go to the link, log in , close 
+		browser for all tests, So if we make those @Before @After "alwaysRun=true" it will
+		run no matter which group you run.
+	
+	
+						"""""""""""" LECTURE 172 """"""""""""""
+						
+						
+						
+	DATA PROVIDER:- 
+	
+	
+	
+	
+	To use data from the test class
+	
+	
+	we can look after the class name 
+	"E2EProductAddingTestCaseDataProviderTestCase_03" to check the Data getting from the 
+	class
+	Where 
+	
+	1) defined a "getData()" method to call the data
+	2) called this getData() method in the test where we need the data from that data 
+		provider.
+	3)
+	
+	
+						"""""""""""" LECTURE 173 """"""""""""""
+						
+						
+	HashMap
+	
+	
+	So, we are creating getData() method where we are storing our data and in Test method 
+	we are sending the as the test method parameters and putting in the place where we need
+	it. But if we do this way, tomorrow may be there will be 100 types of data and we need 
+	create 100 parameters in test method which is not good right thats why we are 
+	introducing HashMap in Data Provider.
+	
+	
+	 1) go to the getData() method and see the Creation of HashMap in the test class
+	 	"E2EProductAddingTestCaseDataProviderHasmapTestCase_04"
+	 2) Stored the data as "key" & "value" and declared in to the test method HashMap
+	 	parameter and called the key value where ever is needed as [input.get("key")]
+	 
+						
+						"""""""""""" LECTURE 234 """"""""""""""
+						
+						
+	Window authentication:
+	
+	Normally selenium handles JavaScript pops by doing "driver.manage().window()
+	.switchTo().alert();" but there can be window authentication this comes from
+	the PC or desktop not from JavaScript those time what we will do?
+	
+	IF this wants a user name and password, normally we will put the in the link
+	like below
+	
+	--> driver.get("http://adminUserName:Password@UrlLink");<---
+	
+						
+	

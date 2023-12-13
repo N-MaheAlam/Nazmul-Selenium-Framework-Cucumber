@@ -1,0 +1,30 @@
+
+				""""""	LECTURE 229	"""""""
+			
+
+			Chrome DevTools Protocol & Selenium
+			
+
+->	Suppose, user will be logged in and will open a new window by clicking
+	a link.
+->	 Amazon website is different based on location such as USA has a 
+	unique layout than Canada.
+-> 	I want to test the functional capabilities of a website so we don't 
+	need to load the image write. That can be done in selenium with the help
+	of CDP(Chrome Devtools Protocol).
+	
+				
+				""""""	LECTURE 229	"""""""
+				
+->	All the browsers are inherited from "RemoteWebDriver" class but in 
+	latest version ChromeDriver and EdgeDriver are inherited from 
+	"Chromium Driver" class as they are being used in CDP.
+	
+		
+		1)	Now create a java project and then convert it into maven
+			project.
+			
+		2)	bring selenium dependecies and maven compiler plugin ( make 
+			sure the java version to provide it I mean for which version
+			you want it. 
+		3)

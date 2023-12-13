@@ -1,0 +1,10 @@
+
+
+
+
+
+	Scalability :
+	
+	Scalability as the measure of an application's ability to decrease or 
+	increase in performance by adding or removing user with minimal cost.
+	

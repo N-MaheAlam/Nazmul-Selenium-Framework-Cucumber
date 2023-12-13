@@ -1,0 +1,311 @@
+
+
+
+
+					LECTURE -01 - Git Installed
+	
+	This lecture is made from the following youtube video that helps to understand
+	the GIT in an extended version.
+	"https://www.youtube.com/watch?v=Ez8F0nW6S-w&t=16s"
+	
+	GIT helps us to track our projects history. Let's see the examples
+	
+	1)	Track the History: 
+	
+		It tracks the changes, such in an web application, I created a log in page, sign up
+		page and about page. I will keep everything or when I am going to create the software
+		I will create a history for each changes, such as when I have created the log in page.
+		When I have wrote the code for sign up page and for about page. Suppose, i want to go 
+		back to the log in page codes, I don't want to create now, sign up page and about page.
+		With GIT, we can move back to that phase without manually changing or deleting (This
+		could be very difficult to go and delete each line of code related to these 
+		particular pages.)
+		
+	
+	GITHUB is a website or hosting service that allow the developers to store and mange their
+	code using GIT.
+	
+	2)	Collaboration: 
+		When any company develop an application, several employers work together, such as
+		developers, testers, project managers. So, they collaborate their codes through the 
+		GIT system.
+		
+		In the language of GIT, we call folders as repository. 	
+	
+	
+	Version Control System is a tool to track the changes that happens to any projects such as
+	in codes.
+	
+					
+	
+	=>	Download git from "https://git-scm.com/downloads" and check the 
+		version from command line bye giving below command
+		
+				==============
+		
+		1)		Command = git --version
+				=================
+				it will show the version of git.
+		
+		
+		
+	=>	In our Terminal command line if we type 
+		
+		"ls" then enter it will show all the folders that we have in our
+		current directory.
+		
+	=>	"ls -a" will show all the hidden files present in the current 
+		directory.
+		
+		
+	=>	We can go any sequence folder by giving " cd folderName"
+		such as let's think I am in desktop now and desktop has photos, 
+		music, So my command will be like below
+		
+		"nazmulmahealam@Nazmuls-MBP desktop %  cd photos "
+		
+		
+	=>	If we want to create any folder in desktop we need to use below
+		command 
+		
+		"nazmulmahealam@Nazmuls-MBP desktop % mkdir newFolderName "
+	
+	
+	Now , Go to the terminal and type 
+	
+	
+				=====================================
+		2)		Command = git config --global user.name "Nazmul Mac"
+				=====================================	
+	
+				I am setting an user name in my local machine which will show 
+				"Nazmul Mac" as user name 
+	
+				=====================================
+		3)		Command = git config --global user.email "myemail@gmail.com"
+				=====================================	
+	
+	
+	
+	To see just the user or email we can just type the same above command
+	without providing the name or email as it will return the name.
+	
+	
+				it will return the user email address
+				=====================================
+	
+		4)		Command = git config --global user.email
+	
+				=====================================
+	
+				it will return the user name 
+				=====================================
+	
+		5)		Command = git config --global user.name
+	
+				=====================================
+	
+				It will return all the user names, email, remote directory everything
+				=====================================
+	
+		6)		Command = git config --list
+	
+				=====================================
+	
+		8) 	"~" This symbol represents in terminal that we are in our root directory file.
+	
+->	Now, create a folder in the local machine and initiate it in 
+			terminal like below or where is your project? go to that folder 
+			from terminal by giving the path of that folder like 
+			"cd folderPath" then enter.
+			
+		7)		-->	cd folderName <---
+				
+			=	it will go to the folder or you can open my right clicking the 
+				folder then "open the folder in terminal" click. Now, right the 
+				below code 
+				
+		8)		--> git init <---
+			
+			=	it will initate a hidden folder with extension ".git". we won't
+				be able to see it but once we unhide all the hidden file then 
+				it will show. 
+				When we run the command it will show a successful message 
+				
+			"	Initialized empty Git repository in /Users/nazmulmahealam
+				/Desktop/NazGitDemo/.git/	"
+				
+				
+		
+			
+			
+					= delete a  branch in local git
+				
+		10)		---> git status
+				
+					= It shows the current situation of git such as it wil
+					  show modified, untrack files which is yet to add and commit
+					  
+		11)		---> git add *
+		
+					= it will add all the files in into the git stage before commiting
+					
+					
+		12)		---> git commit -m "Message that you want to print with commit"
+		
+					
+					= it is the commit codes or files which we may push in to the orogin
+					
+		
+		13)		--->  git remote set-url hereGiveTheLinkWhereWeWantToPushOurCode
+		
+					= if we have the code from a different url or local system
+					  but we want to push our code in a differe repository, then we 
+					  can set the new url repository like above.
+					  
+		14)		---> git config --get remote.origin.url
+		
+					= it will show the curren url of repository where we can push our code.
+					
+					
+		15)		---> git push origin main
+		
+					= this will push our code in the current repository.
+					  Once we try to push it will ask for the user name of the git repository
+					  tools such as github or bitbucket and also the password.
+					  If you use your repository account using google sign in then 
+					  generate the access key token from 
+					  Settings -> Devlopers Settings ->  Personal Access token -> token
+					  
+		16)		---> git clone addressOfThatReposiotryMayBeGithubOrBitBucket
+		
+				
+					= It will create a  copy of the remote repository in our system
+					  especially in our current directory or location of the system
+					  
+					
+	But We Now want to push new project and  our code which is already in our system. 
+	So Make a same folder name in GitHub/BitBucket but do not create any Read.me file 
+	as we will push everything from our local system. Just create a same repo like the
+	project folder name.
+	
+	 Now, initialize git in the project folder by the command (git init)
+	  
+	  
+	  17)		---> git remote add origin linkOfTheEmptyRemoteRepository
+	  
+	  				
+	  				= This is how we add a repository link in our current git 
+	  				  modification.
+	  				  
+	  
+	  18)		---> git remote -v
+	  
+	  			
+	  			= to check the remote path 
+	  			
+	  Always follow a pattern to push the codes in Git
+	  
+	  Create git repo -> clone -> changes -> add -> commit -> push
+	  
+	   
+		19)		---> git branch 
+	  			= To see the branches of local
+			
+		20) 	---> git branch -r <---
+			
+					= To see all the remote branches
+			
+		21) 	---> git branch -a <---
+			
+					= To see all the remote & local branches 
+			
+			
+		22) 	---> git branch branchName <---
+			
+			
+					= Create a new branch in local git
+			
+		23) 	---> git branch -d branchName <---
+			
+			
+					= delete a  branch in local git
+	  
+	  
+	  24)		---> git branch -M modifiedNewNameOfTheBranch
+	  
+	  			= to change the name of the current branch
+	  
+	  
+	  			
+	  25)		---> git checkout -b newBranchName
+	  
+	  			= It will create a new branch and will switch to that branch
+	  			
+	  
+	  26)		---> git checkout main
+	  
+	  			= it will come out from branchName to main 
+	  			
+	  			check which branch we are now by "git branch"
+	  			
+	  			
+	  			
+	  27) 		---> git push origin branchName
+	  
+	  			= It will push the code in branchName which already present or will 
+	  			  create by github.
+	  			  
+	  			  
+	  28) 		---> git merge OtherBranchName
+	  
+	  				= it merges the code into the current branch from OtherBranchName
+	  
+	  29)		---> git pull origin main
+	  
+	  				= It gets all the code from the remote server from its main branch
+	  				  compare the local code and remote code and put the new code which
+	  				  are not present in local system.
+	  				  
+	  				  
+	  				  
+	  30) 		---> git reset fileName
+	  
+	  				= when we have a file in stage ( in add stage) we can revert the
+	  				  change by writing the above code.
+	  				  
+	  31)		---> git reset HEAD~1
+	  				
+	  				= It will revert the in last commit
+	  				
+	  32)		---> git reset --hard hashCode
+	  
+	  33) 		---> git log 
+	  
+	  			    = it will show all the commits and their hascode.
+	  			    
+	  			    
+	  35)		Fork 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

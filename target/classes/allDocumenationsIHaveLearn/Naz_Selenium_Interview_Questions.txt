@@ -1,0 +1,508 @@
+
+
+
+		""""""""SELENIUM KEY WORDS & USES """"""""
+		
+	-	System.setProperty
+		("webdriver.chrome.driver",
+				"/Users/nazmulmahealam/Desktop/Selenium 
+				Test Automation/All Browers Driver/chromedriver");
+				
+	-	WebDriver d = new ChromeDriver();
+	
+	-	d.get("https://the-internet.herokuapp.com/");
+	
+	-	d.manage().window().fullscreen();
+	
+	-	d.manage().window().maximize();
+	
+	-	d.switchTo().window(childWindow)
+	
+	-	d.switchTo().window(parentWindow)
+	
+	-	d.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	
+	-	Thread.sleep(1000);
+	
+	-	WebDriverWait wai = new WebDriverWait
+		(d, Duration.ofSeconds(10));
+		wai.until(ExpectedConditions.elementToBeClickable
+		(d.findElement(By.cssSelector(".btn.btn-success"))));
+	
+	-	d.switchTo().frame("frame-top").switchTo()
+		.frame("frame-middle");	
+		
+	-	d.findElement(with(By.tagName("label")).below(boxName)).getText()
+	-	Keys.chord(Keys.COMMAND, Keys.ENTER)
+	
+	-	setCapability(CapabilityType.BROWSER_NAME, "chrome");
+	
+	-	By
+	-	FindBy
+	-	findElement
+	-	WebElement
+	
+	
+	
+			 ----- LOCATORS -----
+	 
+	-	xpath	//tagName[@AttributeName='value']"
+	
+				//tageName[@attributeName ='value' indexNo]
+				
+				//button[contains(@class,'submit')]
+				
+				//button[text()='Go to Login']
+				
+	-	cssSelector
+				input[type='text']:nth-child(3)
+				
+				input[type='text']:nth-child(3)
+				
+				.className
+				
+				prenttag childTag
+				
+				input[type*='pass']    -its a regex
+				
+				#IdName
+				
+	-	id
+	-	tagName
+	-	linkText
+	-	className
+	
+	
+	
+	
+	
+	
+	
+	
+		---- METHOD LOCATORS USE -----
+		
+	-	.click()
+	-	.iterator()
+	-	.sendKeys()
+	-	.presenceOfElementLocated()
+	-	.presenceOfAllElementsLocatedBy()
+	-	.getText()
+	-	.getWindowHandles()
+	-	.navigate()
+	-	.switchTo()
+	-	.frame
+	-	.above()
+	-	.below()
+	-	.getWindowHandles()
+	-	.newWindow(WindowType.Window);
+	-	.webElementName.getRect().getHeight()
+	-	.webElementName.getRect().getWidth()
+	-	.close()
+	-	.quit()
+	-	.switchTo().alert().accept()
+	-	.switchTo().alert().dismiss();
+	-	.keyDown()
+	-	Keys.SHIFT
+	-	.build().perform()
+	-	.setProperty()
+	-	.getProperty()
+	-	System.getProperty("user.dir")
+	-	.flush()
+	
+	
+	
+	 """""""""""CDP Commands"""""""""""
+	 
+	 
+	-	.getDevTools()
+	
+	-	.createSession()
+	
+	-	.executeCdpCommand()
+	
+	-	d.executeCdpCommand("Emulation.setDeviceMetricsOverride", 
+		deviceMetricsHashMapVariable);
+		
+	-	d.executeCdpCommand("Emulation.setGeolocationOverride", 
+		locationsHashMapVAriables);
+		
+	-	dev.send(Network.enable
+		(Optional.empty(), Optional.empty(), Optional.empty()));
+		
+	-	dev.send(Network.setBlockedURLs(ImmutableList.of("*.jpg", "*css")));
+	
+	-	dev.send(Network.emulateNetworkConditions(false, 2500, 20000, 30000,
+		// Optional.of(ConnectionType.ETHERNET)));
+	
+	
+	CLASS
+	
+	-	WebDriver
+	
+	-	RemoteWebDriver
+	-	ChromiumDriver
+	
+	-	ChromeDriver
+	
+	-	FirefoxDriver
+	
+	-	EdgeDriver
+	
+	-	Select
+	
+	-	Actions (always use "build().perform()" after the actions)
+		Action Class in Selenium is a built-in feature provided by the
+		selenium for handling keyboard and mouse events.
+		
+	-	Alert 
+	
+		->	
+		An Alert in Selenium is a small message box which appears
+		on screen to give the user some information or notification. It 
+		notifies the user with some specific information or error, 
+		asks for permission to perform certain tasks and it also provides
+		warning messages as well.
+
+	-	FileInputStream
+	
+	-	JavascriptExecutor
+	
+			->	This Select class is used in Selenium when we 
+				have a select options. we can select by index,
+				by value, de select all by creating an object of
+				that class.
+				
+			->	JavaScriptExecutor is an Interface that helps to execute
+				JavaScript through Selenium Webdriver. JavaScriptExecutor
+				provides two methods “executescript” & “executeAsyncScript”
+				to run javascript on the selected window or current page.
+				
+	-	WebDriverWait
+	
+			->	with the WebDriverWait, when we create object
+				we pass two parameters one is "driver" and another 
+				is "Duration.ofSeconds(10)"
+				Then we use the object to wait until the some 
+				conditions like
+	"waitObject.until(ExpectedConditions.
+					elementToBeClickable(WebElement)"
+					
+	-	JavascriptExecutor
+		
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,500)");
+			
+			// there is a table with a class name 
+			//"tableFixHead" and now I am scrolling it
+			
+js.executeScript("document.querySelector('.tableFixHead').scrollTop=5000");
+
+
+	-	ExtentSparkReporter
+	
+	-	ExtentReports
+	
+	-	ExtentTest
+	
+	-	DesiredCapabilities
+	
+	-	Predicate
+	
+	-	URL
+	-	HasAuthentication
+			
+	DATA DRIVEN CLASSES
+	
+	-	XSSFWorkbook
+	-	XSSFSheet
+	-----------	SOME BASIC METHODS WE USE IN SELENIUM	-----------
+	
+	1)
+	
+	// when we try to put some behaviour in the browser those time we use this
+		// options
+		// For Edge - EdgeOptions
+		// For FireFox - FirefoxOptions
+		// For safari - SafariOptions
+		
+		ChromeOptions option = new ChromeOptions();
+		
+		// make it true so that the browser can access in an insecure web site
+		
+		option.setAcceptInsecureCerts(true);
+		
+		// put the behaviour in the arguement
+		WebDriver d = new ChromeDriver(option);
+		
+	2) 
+		
+		// to delete all the cookies for the automation in browser
+	
+		d.manage().deleteAllCookies();
+		
+		
+	3)
+		// take screenshot as a file
+		File src = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
+		
+		// store the screen shot in desktop
+		FileUtils.copyFile(src, new File("/Users/nazmulmahealam/Desktop/my.png"));
+		
+	4)
+	
+		// converting a string into integer
+		int netAmountInteger = Integer.parseInt(netAmountString);
+		
+		
+	
+	5)
+		
+		// We already know about assertion when we try to compare two things
+		// there are hot and soft assertion. Hot assertion immediately fails the 
+		// test when the actual result is not same as expected. But in soft 
+		// assertion, if the script gets errors, it
+		// executes the test till last
+		// and then it shows in console the failures
+		
+		SoftAssert objectName = new SoftAssert();
+		
+		
+		// after scanning all the links it will capture the failures and will show in
+		// console.
+		chekAllLink.assertAll();
+		
+		
+	6)
+		=>	Lecture_116_To_117_StreamsAPI_In_Selenimum_matchTableData (class)
+		=>	Lecture_118_StreamAPI_paggination (class)
+		=>	Lecture_120_StreamUsingToSearchBar (class)
+		
+		-	see this lecture to under stand stream in selenium
+		
+		
+	7)	How to handle windows
+	
+		Go to 
+		-	Lecture_125_Multiple_Windows_Open_And_handle (class)
+		
+		// opening a new blank window
+		d.switchTo().newWindow(WindowType.TAB);
+		
+	8)
+		How to get a partial screen shot 
+		
+		File srcFile = webElementName.getScreenshotAs(OutputType.FILE);
+	FileUtils.copyFile(srcFile, new File("/Users/nazmulmahealam/Desktop/naz.png"));
+	
+	
+	9)
+		Explicit wait
+		implicit wait
+		Fluent 	 wait
+
+	
+	
+				"""" PAGE OBJECT LAYOUT """""""
+				
+		FIRST,
+		create a WebDriver variable "driver" in page object class then
+		create  constructor such as 
+		
+			WebDriver driver;
+			
+		// Create a constructor where argument will be a webdriver type
+		
+		public Go_To_Prime_Video_From_Home(WebDriver driver) {
+							this.driver = driver;
+		}
+		-	Create page object class. Then define the locators by creating a
+		variable which will be  using "By" or "FindBy" type.
+			such as 
+			By prime_Sign_In_Button = By.cssSelector("#signInSubmit");
+			
+		-	Then for every locators create a  method which will  return
+			" WebElement" Type such as 
+			
+			public WebElement click_prime_Sign_In_Button06() {
+			
+				return driver.findElement(prime_Sign_In_Button);
+			}
+			
+		-	Now, create an object of that Page Object Model class in Test
+			case class . Call the method by object then perform click(),
+			sendKeys(),getText().
+			such as 
+			
+			Go_To_Prime_Video_From_Home prime_Video 
+			= new Go_To_Prime_Video_From_Home(driver);
+			prime_Video.click_prime_Sign_In_Button06.click();
+			
+			
+			FOR PAGE FACTORY
+		
+		
+		
+		"""""""" INTERVIEW QUESTION """"""""
+		
+		
+	1)	How did you get the data from an external file?
+	
+	ANSWER:-
+	
+	We use JSON file to parse the data.
+	There is a concept call DATA PROVIDER in TestNG which will 
+	perameterise your data. Data provider also accept hash maps
+	as an object to send the data. I will create multiple hash map
+	objects and I send from my data provider to run multiple times.
+	I create a JSON file which converts my utilies into hash maps.
+	
+	How did you convert?
+	
+	There is a dependency call Jackson Databind which we have to 
+	add externally in our project. In Jackson Databind there is class
+	call "JsonMapper" which will convert you json string into list of
+	hash maps.
+	
+	
+	2)	Have you used Interfaces in your framework?
+	
+	 ANSWER:- 
+	 
+	 Yes, TestNG Listeners(ITestListeners) and mostly WebDriver 
+	 it self is a interface as we implement WebDriver as ChromeDriver
+	 FirefoxDriver, EdgeDriver
+	
+	
+	3)	How are you achieving  encapsulation in your framework?
+	
+	ANSWER:- 
+	
+	Encapsulation means hiding the implementation details from of 
+	one class  to another class.
+	
+	I want other class to use my methods not fields like variables
+	so I make my variables private so that only that class can use
+	the fields.
+	
+	
+	4)	Does your framework supports parallel runs? how did you make
+		it thread safe?
+	
+	ANSWER:-
+	
+	-	First, in your testng.xml file we are declaring 
+		"parallel = tests" . 
+	-	So, if is 50 tests in my testng.xml file each will run in 
+		its own thread.They will also not over ride the Web driver
+	-	But when generating test reports then the overridden comes
+		to pictures because one report over writes another which is
+		a problem.
+		So, we solve this problem by "ThreadLocal" class.
+		
+		we create an object of "ThreadLocal" class. Use set method 
+		to store these and get method to retrieve these
+	
+	5)	Did you use static key words in your framework? 
+	
+	ANSWER:-
+	
+	As I am running parallel execution in my framework so, Normally
+	I don't use static key word because I don't want share a same
+	variable to  others such as webdriver its not static because 
+	every time the test starts its start a new driver object and 
+	I don not want to  massup by overriding my web driver object in
+	every tests.
+	
+	6)	what are global variables you can use in selenium I mean you
+		derive?
+		
+	
+	ANSWER:-
+	
+		properties, url, time out, i can also drive from maven
+		
+		
+	7)	How did you run smoke tests in your framework?
+	
+	ANSWER:-
+	
+	 First, mark the test as groups( give a group name) using 
+	 TestNg parameter.
+	 
+	 Second, create a new testng.xml file for only that group
+	 inside xml file declare "groups" and inside groups "include"
+	 
+	 Third, create a new profile in your pom.xml file for that
+	 testng.xml file (don't forget to give id in profile)
+	 then call it "mvn test -p profileName"
+	 
+	 8) How you are handling flaky tests in framework?
+	 
+	 ANSWER:-
+	 
+	 Flaky test means which are in consistent, might fail randomly
+	 or pass in the second attempts.
+	 
+	 IN, testNG there is an interface "IRetryAnalyzer" we 
+	 implements this interface to a class so that it can run
+	  a test couple times according to my instructions until it
+	  geneinly  fails
+	  
+	  AND the test where we wan to retry we add another helper
+	  attribute " retryAnalyzer = Retry.class"
+	  
+	  9) How did you handle failures?
+	  
+	  ANSWER:-
+	  
+	  I used TestNG Listeners where I implements "ITestListeners"
+	  interface and capture the failure in "OnTestFailure" method.
+	  
+	  
+	  
+	  10) How to design a Framework Architecture?
+	  
+	  ANSWER:-
+	  
+	  I)	In My test cases there will be test steps. And this
+	  		test steps needs locators.
+	  II)	For locators we are relying on PAGE OBJECTS. Suppose
+	  		my application has 10 pages , I will create 10 page
+	  		objects.
+	  III)	Now, all the pages can have some common sections like
+	  		header sections, footer section. So, there can be some
+	  		common reusable code which we can use in every page
+	  		or when ever we will need. For that, we can create a
+	  		common "Abstract component" class and inherits 
+	  		properties.
+	  		 
+	  IV)	Even, test case classes can have common code such as
+	  		initialising the browser, closing the browser, selecting
+	  		the browser to execute. For using common code we can
+	  		create another class call "base Class" and the test cases
+	  		will extend this common base class to use the common code
+	  		
+	  V)	So, You write test cases, you write page objects. So,
+	  		Data coming from JSON file.Before its coming to the test
+	  		cases there is a parser which between Base class and test
+	  		cases. getDataToJSON(We write this method not build in).
+	  		That method reads JSON file converts it into hash maps
+	  		and  pass the data into DATA PROVIDER and our test cases
+	  		 uses these data.
+	  		 
+	  VI)	For generating Extent Reports we are using Listeners
+	  		class as well as showing On test success what it show,
+	  		on test failure what will show, how to capture, screen
+	  		shots, how to run parallel tests using thread local.
+	  		
+	  		AND also Retry Listeners to run the random failure 
+	  		tests for certain times so that the can pass properly.
+	  
+	  VII)	Then finally, in our pom.xml file we can show we tests
+	  		should 	trigger. we can call these by maven command also.
+	  		
+	  		
+	  		
+	 
+		
+	

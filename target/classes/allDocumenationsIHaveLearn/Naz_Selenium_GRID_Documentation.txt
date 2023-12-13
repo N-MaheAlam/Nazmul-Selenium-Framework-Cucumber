@@ -1,0 +1,132 @@
+	
+		 	LECTURE 223:- 
+		 	
+		 					"SELENIUM GRID"
+		 	
+		 	
+		 	
+		 	- [ ] Selenium grid is nothing but running test in multiple 
+		 	machine parallel.
+
+
+			- Client:- is nothing but our selenium raw code . Like local machine
+			
+			- Router :- request from client will go to the router. From router 
+			it will be directed to the distributor who is nothing but reads the 
+			code and properties to direct code into the exact node (machine). 
+			
+			The distributor will send request to node to execute the code. 
+			When distributor send request to nodes to perform a task which 
+			has come from client , distributor will send the session details to
+			 session maps like session id and node details. So, now client send 
+			 first line of code through router , and distributor and found out 
+			 the node. So, if the code for the same test is sent by the client 
+			 , router will now talk to the session map and will look for the 
+			 session id and node. When router gets, then is it passes code 
+			 directly to the nodes. Distributor is used only for the first 
+			 time to create a session for a test. 
+			 
+			 
+			 LECTURE 224 :-
+			 
+			 "SELENIUM GRID INSTALLATION"
+			 
+			1)  Download Selenium Grid jar and place it where I have kept
+			 the drivers like chrome driver, gecko driver. 
+			
+			2) open the terminal from that folder and in terminal write
+			
+			--- java -jar selenium-server-4.3.0.jar hub ------
+			
+			 -> Now, at the end you will see 
+			 	"Started Selenium Hub 4.3.0"
+			 	-> Now, go to "http://localhost:4444/ui" you will see a 
+			 	Selenium Grid Page 
+
+		 [Hub and node can be same system which is that when hub receives 
+		  request it will assign to your machine as it is also a node]
+		  
+		  3) Now , open a new tab from terminal and put the below code
+		  to start your machine as a node also 
+		  
+		  --java -jar selenium-server-4.3.0.jar node --detect-drivers true---
+		  
+		  This command starts the machine as node and gives the path of drivers
+		  make sure the drivers and selenium server is in same folder.
+		   
+		   	GO to http://localhost:4444/ui you will see the difference
+		   	
+		   	
+		   	LECTURE 225 :-
+		   	
+		   	"SELENIUM GRID in different machine as node"
+		   	
+		   	To use other machines as node. 
+		   	 
+		   	 i) Make sure you installed all the browsers on that particular 
+		   	 machine.
+		   	 
+		   	 ii) Make sure you put all the drivers and selenium  server jar
+		   	 	in the same folder.
+		   	 	
+		   	 	
+		   	 	1) Go to the command prompt of that machine and go inside the
+		   	 		folder and run the same "node" command
+		   	 		
+		   • Start the Node in different Physical Machine : -
+		   -----------------------------------
+			java -jar <SeleniumJarname> node --detect-drivers true 
+			-- publish-events tcp://<ipaddressofhub> --subscribe-events 
+			tcp:// <ipaddressofhub>
+			---------------------------------
+		   
+		   => Version of selenium server can be different 		
+		   	 	 
+		   	 	 2) Now, we need to register new node to our hub machine.
+		   	 	  There are two events publish events and subscribe events.
+		   	 	  
+		   	 	  -> In hub there is "XPUB" binding is 4442 and XSUB binding 
+		   	 	  is 4443. 
+		   	 	  -> IP address is in the last in hub terminal
+		   	 	  -> So according to my system if I rewrite the code it will be
+		   	 	  like  
+		   	 	 
+		   	 	 -----------------------------------
+			java -jar selenium-server-4.3.0.jar node --detect-drivers true 
+			-- publish-events tcp://192.168.2.15:4442 --subscribe-events 
+			tcp://192.168.2.15:4443
+			---------------------------------
+		   	 	 
+		   	 	 
+		   	 	 LECTURE 226 :- 
+		   	 	 
+		   	
+		   	Now, write selenium code then go through the below processes 
+		   	
+		   	-> Create a new java project and add 
+		   	"Java build path -> class path -> add external jars -> 
+		   	add the selenium server jar and apply it.
+		   	
+		   	Now, go to the "Naz_Selenium_GRID_LECTURE_222_TO_227" project 
+		   	see the definitions of the classes and comments then you will under
+		   	stand.
+		   	
+		   
+		   -> Make sure you convert the project in TestNG and parallel mode is 
+		    in "classes"	 as we have two classes on that package and we want 
+		    to run two classes parallel.
+		   
+		   -> Remove (.) dot from class names in testng.xml file as the classes 
+		   	 now in default folder.
+		   
+		   REMEBER :- 
+		   In real time what people do
+		   
+		   	i) All the hub processes can be in one machine
+		   	ii) eclipse java code (client) can be one machine
+		   	iii) they create multiple nodes 	 
+		   	 	 
+		  -> No matter from which machine you are running your tests, you are
+		  asking to reach the IP address [new URL("http://192.168.2.15:4444")] in
+		   RemoteWebDriver class. So, it doesn't matter your hub and actual 
+		   client (selenium code) is the same machine.

@@ -1,0 +1,44 @@
+
+
+			""""""	LECTURE 337	"""""""
+			
+			CLOUD TESTING
+			
+=>	Cilent wants to test his/her tests in a firefox version which
+	is not available in my company so those time should test 
+	my selenium code in a cloud where other people hosts the version
+	that I want.
+	
+	
+	-> For cloud testing we can use the sauce lab web site to test 
+		our selenium codes. Let's register there and check
+		
+		
+		
+		We need to know about "Desired Capabilities" class. This 
+		class connects the cloud and our selenium code. and in 
+		cloud virtual machine, we can provide the informations 
+		such weather I want to run in windows or mac or linux and 
+		there versions. Which broswer and version I want to run 
+		I can provide all these details.
+		
+		1) To set the capabilities we can use a web site which will 
+		give use automatic capabilities to run the test for OS
+		versions and browsers versions.
+		
+		2) We normally used WebDriver d = new ChromeDriver();
+		
+		But  as our test will not be performed in our machine. we
+		should provide RemoteWebDriver() instead of ChromeDriver()
+		or firefoxDriver() etc.
+		
+		
+		
+		So,
+		
+		i) set desired capabilties
+		ii) set remote driver and its URL and capability argument
+		iii) bring the user name and access key and code from souce
+		lab. 
+		iv) run the test from your machine and check it in sauce lab 
+		web site.

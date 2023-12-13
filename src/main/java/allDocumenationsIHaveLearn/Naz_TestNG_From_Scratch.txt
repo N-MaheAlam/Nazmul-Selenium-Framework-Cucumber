@@ -1,0 +1,50 @@
+
+
+
+							LECTURE -130 - TestNG -Install
+							
+							
+							
+		=> Install testNG in your Eclipse 
+		 	-> Click help - market PLace - search "TestNG"
+		 	-> Then install by clicking one by one.
+		 	
+		=>	Check that TestNG is installed or not In preferences of Eclipse
+		
+						
+						
+							LECTURE -131 - TestNG -Run
+			
+			
+		
+		=>	Create a new project inside "src"
+		=>	Now, create a class without java "main function"
+		
+		=> create a method 
+			
+			@Test
+			public void testNGdemo(){
+				
+				// Write a print or tests
+			}
+		
+		=>	Here "@Test" is to say this , that this is a test then click on 
+			"run" but it it show error in "@Test" annotation
+			
+			- hover on Test
+			- it will show "add TestNG library " add it 
+			- then again it will show error then "add testNG annotations"
+			thats it
+			
+		=> now click on run you will see "run with TestNG". Now run.
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

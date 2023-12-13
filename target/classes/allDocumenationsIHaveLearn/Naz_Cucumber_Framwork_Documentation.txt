@@ -1,0 +1,432 @@
+
+
+				"""""" LECTURE 307 """""""
+
+=>	In software engineering, behavior-driven development (BDD) is an agile 
+	software development process that encourages collaboration among 
+	developers, quality assurance testers, and customer representatives 
+	in a software project.
+	
+	It encourages teams to use conversation and concrete examples to 
+	formalize a shared understanding of how the application should behave
+				
+=>	Behaviour Driven Development is one of the approach which popularly
+	in agile project.
+	
+	
+	->	Suppose a business analyst will define the requirements of a 
+		project by talking with clients, I mean analyst will take note
+		on a document. The developer will develop based on that document
+		and tester will test based on that document. But there can be
+		perception mismatch among business analyst, developer, tester 
+		as they view the document in different way. There can be mis-
+		match of proper communication among stake holders, developers,
+		analyst
+		
+		->	To remove this conflicts or to bring them in a common 
+			bridge they can up with an idea or a template or a language
+			 which is called ubiquituos language.
+		
+		->	In this language, they write requirement in a standard 
+			template which is understandable by all of them.
+		
+		->	You have to write business requirements in such a way that
+			it should be understandable by technical , non technical 
+			developers by anyone. 
+			
+			
+			
+			
+				"""""" LECTURE 308 """""""
+
+
+=> So, the syntax and the business scenario will be something like below				
+				
+	
+	-> 
+		IN ORDER TO (Achieve something) --- Outcome
+		
+			AS A (role)
+				
+				I WANT TO (do this)		
+				
+				
+	-> Example :- 
+		
+		IN ORDER to log in facebook -> out come want to log in
+		
+			AS A facebook user
+			
+				I WANT TO sign in my account by putting email and pass.
+				
+	-> As a tester My scenario
+	
+		
+		 IN ORDER to login in facebook -> outcome log in
+		 
+		 	AS a Tester
+		 		
+		 		I WANT TO check with right password and email, is it log in. 
+		 		
+		 		Wrong password and right email is it log in.
+		 		Wrong password and wrong email is it log in.		
+				Right password and wrong email is it log in.
+				
+	-> A QA guy also need to follow some syntax. These are 
+	
+		GIVEN
+		WHEN
+		THEN
+			
+=>	IF we consider the above scenario what could be a QA guy to 
+	do to check the behaviour of that particular business scenario?
+	
+	
+	TEST CASE 01: -
+				
+		 Given:	Wrong password and right email is it log in.
+		Action:	Click Log in & processing
+		  Then:	Fail to log in( error message wrong password)
+		  
+	TEST CASE 02: -
+				
+		 Given:	Wrong password and wrong email is it log in.
+		Action:	Click Log in & processing
+		  Then:	Fail to log in( error message wrong details).
+		  
+	TEST CASE 03: -
+				
+		 Given:	right password and right email is it log in.
+		Action:	Click Log in & processing
+		  Then:	Success to log in( successful message wrong).
+		  
+		  
+		  
+		  
+		  
+		   		"""""" LECTURE 310 """""""
+		   		
+		   		
+=>	People will use BDD( Behaviour Driven Development ) to make a 
+	template which is understandable by everyone.
+	
+	-> 	Each scenario reflects business value	   		
+		   		
+	->	There are hundreds of business values we have developed or 
+		tested for our project.	   		
+		   		
+		
+=>	Suppose, for a credit card payment scenario I have 5 test cases
+	if 3 passes then the test coverage will be 60%.  		
+		   		
+		   		
+		   	    --------USING CUCUMBER--------
+		   	    
+		   	    
+		   		"""""" LECTURE 312 """""""
+		   		
+	1) First , we need to download a gerkins plugin in our eclipse		
+		   		
+		i) Go to help-> market place -> search "cucumber plugins"
+		  and download.
+	   ii) create a new maven project with 
+	   		"maven archetype quickstart" and provide Group id and
+	   		artifact id.
+	   iii)	Now, we need to bring Cucumber JVM: Java and 
+	   		Cucumber JVM: JUnit from maven repository
+		  
+	2)	In selenium or with java we developed test cases as the way
+		we want but in cucumber it expect a skeleton or a pattern
+		to write the test cases.	  
+		  
+		
+		[REMEMBER, maven provide multiple types of project skeleton
+		not only cucumber, but also if you want to develop web sites,
+		java script applications, xml based application, swing etc
+		maven gives a ready made skeleton for these applications.
+		So, whenever we work we just need to tell maven that which
+		type of skeleton we are asking for.]
+		  
+		  
+		  		"""""" LECTURE 312 """""""
+		  		
+=>	Normally, in java project we put jars in 
+	properties->java build path-> add jars
+	
+	**But maven doesn't expect jars in build path. we need to give
+		jar information in pom.xml file which is heart of maven
+		project.
+		
+		First,
+		->	We need to understand Feature file ( given, when,then)
+			All the features which needed to test the application
+			will go to the feature file. Same feature file we will
+			use to automate.
+		 
+		Second,
+		->	Step definition file , I will write the automation code
+			such in feature file I write " click the button" and 
+			in step definition I will write the code to click the
+			button. and I will also provide mapping , which line
+			for which code.
+		  
+		Third,
+		->	Junit Test Runner  which triggers all the test cases.
+			Here , we will tell where is the feature file and step
+			definition files and will execute the test. it works
+			 as connecting the dots.
+			 
+
+=> So, to start new the cucumber 
+
+		->	Now, in src/test/main create a new package "features". 
+		cucumber is case senstive so make sure about everything.
+		
+		->	Now, create a new file with the extension "feature".
+			Feature will look like this 
+			--------------------
+			Feature: Application log in
+
+			Scenario: Home page default log in
+			Given User is on NetBanking page 
+			When User login into application with user name and password
+			Then Home page is populated
+			And Cards are displayed
+			----------------------
+		
+		
+		
+		"""""" LECTURE 315 """""""
+		
+		Now, Create a new package in src/test/java with the name 
+		"naz_Step_definition" and create a new class name "naz_cucumber
+		_defin"
+		
+		Now, every feature, Given, When, Then, And
+
+		 will be annotated and will be use the line. see below and
+		 match with feature
+		 -----------------------
+
+		@Given("^Given User is on NetBanking page$")
+		public void Given_User_is_on_NetBanking_page(){
+		
+		 //write automation  code 
+		}
+		---------------------------
+
+				"""""" LECTURE 316 """""""
+
+
+=>	Now, to create step definitions, we can use a google extension
+	name "Tidy Gerkin" download it add in google extension.
+	
+	
+	-> Open the app through chrome//apps
+	
+	-> file from feature file, put it inside the app and see the magic.
+	
+
+				"""""" LECTURE 317 """""""
+
+
+=> We have created feature files, step definition files
+
+	=> Now, its time to create Test Runner
+	
+	->	Create a new package inside "src/test/java" , "naz_Test_Runner"
+		and a new class inside the package "Test_RunnerClass"
+
+
+
+				"""""" LECTURE 318/319 """""""
+
+=>	If Gerkin chrome plugin is not available we can normally trigger 
+	the runner file and in output (console) it will show the 
+	implementation of step definition.
+	
+	"REGULAR EXPRESSION for different data but same implementation"
+
+
+	-> Now, in our cucumber feature file there can be multiple scenario
+		and multiple scenario can perform same thing like to hit the
+		HOME button we need to go the page and click home page button.
+		Same for CONTACT button , go to the url and hit the contact 
+		button. so going to the same url.
+		
+		-> for that we can use the same GIVEN,WHEN, or THEN for 
+			feature line and one step definition method will 
+			indicate the same GIVEN, WHEN , THEN and AND.
+			
+		->	IF we have data in our feature file, how we will write
+			feature and step definition?
+			
+			feature will be like:- 
+			
+			---------------------------------------------
+			When Login name "nazmul" and passord "12345"
+			---------------------------------------------
+ 		
+ 		
+ 		
+		   step definition will be like:-
+		   
+		  ---------------------------------------------
+		  
+		@When("^Login name \"([^\"]*)\" and passord \"([^\"]*)\"$")
+    	public void login_name_something_and_passord_something
+    		(String strArg1, String strArg2) throws Throwable {
+        throw new PendingException();
+    }
+		  ---------------------------------------------
+		   			
+		   		"""""" LECTURE 320/321 """""""
+		   		
+=> Let's add  cucumber in our exiting End to End Selenium framework 	
+		   			
+	To Do So,
+	
+	1)	Bring all the cucumber jars in pom.xml file in selenium 
+		framework project.
+		
+	2)	Create a same feature package inside "src/test/java" file and 
+		also the step definition package inside it and the Test Runner
+		package also.
+		
+	3)	Now, write in feature files  the features in feature package
+		with the name of that file ".feature" extension and implement
+		 the step definitions and don't forget to implement the runner
+		class in runner package.
+		
+	4)	If you run the runner class it will automatically show 
+		the step definition methods to implement in console.
+		copy the methods and import important packages to remove
+		the error.
+		
+		
+		
+		   			
+		   			"""""" LECTURE 320/321 """""""
+		   			
+=>	Now in step definition class , bring all the selenium code such
+	to in step definition class there is " go home page" method
+	 now put selnium code 
+	 ------------------------
+	 d = initialize_WebDriver();
+	 d.get("http://www.qaclickacademy.com/");
+	 -----------------------------
+	  go to "Naz_Step_Definition_Class.java" to understand it.
+	   			
+		   			
+		   			"""""" LECTURE 322 """""""
+		   			
+		   			
+=> Integrating  a new page object in robust framework
+
+
+
+					"""""" LECTURE 323 """""""	
+					
+					
+					
+=>	Data Providing in cucumber, To do so
+
+	1)	Make "Scenario" into "Scenario Outline" in feature file
+	
+	2)	In which line we want to use the data ? Normally we use 
+		double quote ("") to define a data in feature file.
+		BUT now we will use (<DataName>) like this way 
+		such as 
+		
+		Before:
+		-------------------------------
+		Given The username "Nazmul" and password "12345"
+		
+		
+		After:
+		---------------------------
+		Given the <username> and <password>
+		---------------------------
+		
+		 ->	After that, to define the data we need to use below 
+		 	line.
+		 
+		 
+		 -------------------------------
+		 (Here, ****, starts are my requirements)
+		 Feature: *****
+		 
+		 Scenario Outline: *****
+		 Given the <username> and <password>
+		 When *****
+		 Then *******
+		 
+		 Examples: 
+		 |username	|	password	|
+		 |nazmul	|	123456		|
+		 |mahe		|	23093		| 
+		 
+		 
+	3)	Now, you need to change the step definition for this "Given"
+	 	in definition class
+	 	---------------------------------
+	 	@Given("^the (.+) and (.+)$")
+    public void the_and(String username, String password) throws Throwable {
+        //Write selnium code to pass these two parameters
+    }
+    	-----------------------------
+		 	
+		 	"""""" LECTURE 324 """""""
+		 	
+
+=>	Cucumber runs in junit but our robust framework runs in testNG
+	So, there will be a conflict or break in running tests.
+	
+		Let's create a testng.xml for Test Runnner class
+		
+	
+	->	If you run the new testng.xml file it will show no testng
+	 	file is found.
+	 	
+	  To , run testng in cucumber 
+	  
+	  1) we need to bring cucumber: testng dependency in maven
+	  
+	  [REMEMBER if showing error , I mean when you try to import 
+	   something it will show "create" or something like that but 
+	   not import, those time update the maven project , then it 
+	   will show.
+	   
+	   2) We need to bring a cucumber class to use testng in cucumber.
+	   
+	   		->	In Test Runner class extend the 
+	   			"AbstractTestCucumberTests" class thats all
+	   			then run the runner class through new testng.xml
+	   			file and it will trigger the test.
+	   			
+	   		-> and import 
+	   		"import io.cucumber.testng.CucumberOptions;"
+	   		
+	   		not 
+	   		import io.cucumber.junit.CucumberOptions;
+	   		
+	   		as we are running cucumber in testng not in junit.
+	   	3) Now, to run this testng.xml file in maven, we need to
+	   		put the name of this testng.xml file in surefire plugin
+	   		
+	   		and now run the test in command prompt or in terminal 
+	   		
+	   		by putting "mvn test" 
+	   		it will trigger the test 
+	   		
+	   		[ with cucumber and testng we made a hybrid testing 
+	   		framework
+	   	
+	   	
+	   	
+	   	
+	   	
+	   	
+	   	
+	  
+				

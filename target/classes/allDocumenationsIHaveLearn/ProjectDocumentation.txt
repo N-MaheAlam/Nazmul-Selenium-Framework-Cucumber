@@ -1,0 +1,1105 @@
+
+
+		*********** rahulonlinetutor@gmail.com **************
+This project is about how to create a robust framework which means
+how can we develop a test framework from scratch.
+
+		******* Here I will discuss about what are the tools and 		
+				how I have developed this framework. And details for 
+				each code is given in there classes.
+
+
+		LECTURE 191 :- 
+		
+-> The first thing that we need to do is to create a maven project
+	from the eclipse
+	
+	1) MAVEN INSTALLATION: - 
+	
+		i) File -> New-> Other-> Maven -> Maven Project
+		
+	   ii) Next->Next-> search with anyone of this following
+	   		make sure they are same.
+	   		
+	  iii) "org.apache.maven.archetypes" "maven-archetype-quickstart"
+	  
+	   iv) Next-> provide a group id which is the main package and
+	   		an artifact id which a sub package.	
+	   		
+	   	v) click on "Finish".
+	   
+	2) SELENIUM & TESTNG DEPENDEPCY: -
+		
+		 vi) Now, go to the project and you will see a file name 
+			"pom.xml"
+			
+		vii) Now inside the "pom.xml" file just right above the "build" tag, 
+			 create a "dependencies" tag. Then inside the tag we need to
+			  put 2 dependencies one for "selenium" & one for "TestNG".
+			
+		viii) SELENIUM:- "https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java"
+			Copy and paste the latest dependency inside the 
+			xml file. This is for SELENIUM
+			
+		  ix) TESTNG :- "https://mvnrepository.com/artifact/org.testng/testng"
+			Copy and paste the latest dependency inside the 
+			xml file. This is for TESTNG
+			
+		  xII) Also import "WebDriverManager" From maven repository which helps us 
+		  	   to not to use the location of webdriver
+			
+		   x) Now, in my project you will see there two folder name 
+		   	  "src/main/java" & "src/test/main".
+		   	  
+			So, in "src/main/java" I will create our page object and in
+			 "src/test/java" I will create the test cases , I mean what are 
+			 the tests, will execute , I will write it in test.
+			
+		UNDERSTANDING CLASSES :-
+			
+			 a) Go, "Base_Class" in "resources"  to understand about how
+			    base should be created.
+			    
+			    -	In "Base_Class" we declare a method which will be used 
+			    to call different types of web browsers because in every test
+			    cases we don't need to declare browsers right? To make it short
+			    we are going to define all the global variables in a class 
+			    and inside class, method which we will invoke whenever we will 
+			    need it.
+			    
+			    -	"Properties" class which is used to get the data from
+			    different files. but to use it properly we need to call the
+			    "FileInputStream" class to read from a files and the file 
+			    name must in "fileName.properties" extension.
+			    
+			    - load the file into Properties class object.
+			    
+			    - Now, if the browser name is chrome then give the  code
+			    ---------------------
+			    System.setProperty("webdriverName", "path of web driver");
+			     d = ChromeDriver();
+			    -----------------
+			    -	else if (browser name is fire fox then code for fire fox
+			    - else if (browser name is IE then code for IE).
+			    
+			    - 	Once we have done these then we have to return the driver 
+			    	object. So, make sure the method returns "Web Driver".
+		
+		
+		LECTURE 192 :-
+		 
+		
+		TIPS_01 :-	Its better not to create WebDriver object  as a local 
+					variable. Its better to declare as a global level variable.
+					like (public WebDriver d;). Because if we declare this 
+					object in every block, it will die when we will call it
+					from that block. In addition we need to declare it in every
+					block.
+		TIPS_02 :-	if you are extracting any value from a property the avoid
+					using "==" [that is used if the object is using same 
+					memory location]to compare instead use "equals"
+					
+			-> Now create a new class "TestCases_For_Home_Page_Validation"
+				where we will call the method from Base_Class. To do So, we 
+				need to extend the TestCases_For_Home_Page_Validation from "Base
+				class" as it a rules of inheritance that if we want use any
+				method or variables in a child class, we must extend the child
+				class from parent class.
+				
+			
+			EXCEPTIONS_01:- "NullPointerException"
+			
+			-> When we didn't get the actual object those time this exception
+			arise. 
+		
+		
+				
+		LECTURE 193 :-
+			
+			    
+			 b) Go, "landingPage" to understand the page object pattern.
+			 -> In the mean time we will create a new package called 
+			 	"resources" where we will put our properties file and
+			 	Base_Class.
+			 	
+			 -> Create another package for landingPage where we will 
+			 	illustrate our page object pattern.
+			 	 	
+			 	 	i) In page object , we create a variable type "By"
+			 	 	
+			 	 	such as 
+			 	 	--------------------------
+			 	 	// This is the variable
+			 	 	
+			 	 	By sign_In = By.cssSelector("selectors");
+			 	 	
+			 	 	
+			 	 	// This is the method for above variable that we will
+			 	 	// call in test cases
+			 	 	
+			 	 	public WebElement sign_In_Button(){
+			 	 	
+			 	 		return driver.findElement(sign_In);
+			 	 	}
+			 	 	
+			 	 	
+			  TIPS_03: -	Make sure , you give the life of  WebDriver 
+			  		by declaring the web driver variable in constructor of the
+			  		landingPage.
+			  		
+			 TIPS_04: -		We can use a class's properties(variables,methods)
+			 		by inheritance or by creating the object of that class into
+			 		the desire running class such as 
+			 		 a) class A extends  B -> inheritance
+			 		 b) A a = new A();  -> Object creation
+			 		
+			 c) Go, "TestCases_Class" to understand how I have invoke
+			 	the web element methods in test cases.
+			 	
+			 	
+			LECTURE 194 :- 
+			
+			-> create a new class for log in page and define the page
+			objects and call the
+			
+			
+			LECTURE 195 :-
+			
+			-------------------------
+			@DataProvider
+			 public Object[][] getData(){
+			 
+			 Object[][] data = new Object[2][2];// 2 row, 2 column
+			 
+			 data[0][0] = "Naz";
+			 data[0][1] = "28";
+			 
+			 data[1][0] = "Alam";
+			 data[1][1] = "22";
+			 
+			 }
+			 ----------------------	
+			 
+			 -> So, the above code will provide the data for a test case.
+			 and to use these data in a test case we , need to declare these
+			 in below way 
+			 -----------------------
+			 
+			 
+			 @Test(dataProvider="getData")
+			 public void testCase01(String name, String age){
+			 
+			 System.out.println(name);
+			 System.out.println(age);
+			 }
+			 
+			 
+			 -------------------------------
+			 
+			 -> This above code will take the data from "getData" method
+			 	and will pass into the "testCase01" method two times ( as 
+			 	there are 2 sets of data)
+			 	
+			 LECTURE 196 TO 198 :-
+			 
+			 "Assertions"
+			 
+			 ->Assert.equals(actual, expected)
+			 	--	Here, we are comparing two values one is actual value 
+			 		and another is expected value. If the values are same then
+			 		it will pass the test or if it is false then it will show
+			 		an error message.
+			 	
+			 -> Assert.assertTrue("web element")
+			 	--	This assertion expect a true value otherwise through an error
+			 	
+			 ->	Assert.assertFalse("web element")
+			 	--	This assertion expect a false value otherwise through an error	
+			 		
+			 
+			 TO, build a robust framework we should not hard code in test cases
+			 which means the global variables , like link of the web site, browser
+			 name we should define these in a file and call these through Properties
+			 class that we have defined in Base_Class. So for that, declare the
+			 Properties type variable outside the method and make it public.
+			 
+			 and call it by (propObjectName.getProperty("key/url");
+			 
+			 
+			 LECTURE 199 :-
+			 
+			 -> Convert the project into "testng.xml" and run as a TestNG suite
+			 	then, you will see all the test cases in different class will appear
+			 	in xml file and will run one by one
+			 	
+			 -> try to initialise the browser and the url @BeforeTest in every class
+			 and every every class close the browser by putting 
+			 
+			 -------------------
+			 @Aftertest
+			 public void closeBrowser(){
+			  driver.close();
+			 }
+			 --------------------
+			 	
+		FROM LECTURE 200: - (TESTNG INTEGRATION WITH MAVEN)
+		
+		-> When I tired to run my testng.xml file through maven file , I need
+		to bring some thing from 
+		------"https://maven.apache.org/surefire/maven-surefire-plugin
+		/examples/testng.html"---- which called "Using Suite XML Files"
+		
+		-> This code I should put inside the "pom.xml" file and inside
+		the "build" tag 
+		
+		-> NOW, GO to the command prompt or terminal then go inside 
+		the project using "cd path of that folder"
+		
+		-> then in command prompt put "mvn compile" which will test 
+		that is there any error in your maven project or not and it will 
+		download jars if we need to run the project 
+		
+		-> Make sure you have converted it into to TESTNG.
+			 click project-> TESTNG-> Convert TESTNG
+		
+		-> Now, write "mvn test" which will run the testng.xml file
+			without the help of eclipse from command from and will 
+			show the success and failures 
+			
+		FROM LECTURE 201:- LOG4J INTEGRATION
+		
+		-> first we need to bring the dependency from their official
+			web site 
+	---"https://logging.apache.org/log4j/2.x/maven-artifacts.html---
+		
+		-> add the maven dependency from that web site into pom.xml file
+		and inside the "dependencies" tag
+		
+		-> don't bring this log4j from mvn repository web site because it 
+		has two dependency inside it one is "log4j-api" and another is 
+		"log4j-core" ( this is their artifact id )
+		
+		-> Now, bring "log4j2.xml" I mean we have to create a log4j xml
+			file and declare how we want our report. do we want it in 
+			console or in a different folder. Go to log4j2 examples and 
+			videos to understand this properly
+			
+		-> Now, if there is a "resources" folder , then put this 
+			"log4j2.xml" file into that folder.
+		
+		-> Now, In "pom.xml" put this code inside the build tag 
+			
+			"<resources>
+					<resource>
+        				<directory>src/main/resources</directory>
+        				<filtering>true</filtering>
+     					</resource>
+			</resources>"
+			
+			---> This above code will help maven to reach to "log4j2.xml"
+			file and will trigger the test where logs will do their
+			part in a project. If I don't give this, the maven will 
+			not understand that what it will do with log4j2 file
+			
+			
+			-> In every test  I have to define 
+			"final Logger log = (Logger) LogManager.getLogger(TestCases_Class.class.getName());"
+			
+		
+		
+		LECTURE 202 :- 
+		
+		->	When we will run the test using testNG , we will see that the browsers
+			are not getting close after each test execution, it closes all the 
+			browsers after the whole testNG xml execution. So, my point is that 
+			after each execution the browser should get close. For, in testNG xml
+			file, we should wrap every class in single test like below.
+			
+			
+			BEFORE testng.xml file :-
+			------------------------
+			 <test  name="Test2">
+  
+  	  		<classes>
+      		<class name="EndToEndSeleniumAutomation.TestCases_Class"/>
+      		<class name="EndToEndSeleniumAutomation.TestCases_For_Home_Page_Validation"/>
+      		</classes>
+      		</test>
+      		---------------------
+      		
+      		AFTER testng.xml file :-
+      		---------------------
+      	 <test  name="Test1">
+   		 <classes>
+     	 <class name="EndToEndSeleniumAutomation.TestCases_For_Home_Page_Validation"/>
+     	 </classes>
+     	 </test>
+     	 
+     	 <test  name="Test2">
+    	<classes>
+      	<class name="EndToEndSeleniumAutomation.TestCases_Class"/>
+      	</classes>
+      	</test>
+			
+		--------------------------------
+		
+		"MAKE SURE , you put the @AfterTest at the end of every class to close the
+		browser"
+		
+		-> So, when we run test in framework its okay to use the driver object "d"
+			that has been declared in Base_class but if we want to run all the 
+			test classes parallel we might see failure. But sequential mode, it
+			fine to use the Base_class object as each test is executing one by
+			one. But when we want to run all the test in parallel , to avoid this
+			over riden collision , we should declare driver for each test 
+			class individually like declare "public WebDriver d;" in each test
+			class.
+		
+		-> Suppose, one class is using the driver object of base class, after the
+			test another class will use the same driver object, then another and 
+			by the this way the driver object will be over riden and alot of 
+			confusion will arise. To avoid this , we need to declare driver 
+			in each class as local.
+		
+		-> Now, If I want to run parallel all the tests together I just need to 
+			add [parallel = "test"] in my testNG xml file in suite level , I 
+			mean in suite tag just pass this code. Now all the test will run
+			parallel instead of sequentially.
+			
+			
+			LECTURE 203 & 204 :-
+		
+		"USING TESTNG LISTENERS"
+		
+		-> We want capture the failures on test. To Do So, we can do it by testNG
+			Listeners. First create a new class "Naz_Listeners" and  which 
+			implements "ITestListener".
+		
+		-> And if we want to implement all the methods 
+			first click the class-> source-implements override methods
+			
+			= It will show up with all the override methods of ITestListeners
+			
+		-> So, all the reuse able code we have written in Base_Class. Now go 
+			to baseClass and create a method.
+			
+			--------------------
+			public void getScreenShotPath(String testCaseName, WebDriver d) 
+		throws IOException {
+
+		// take screen shot of driver d
+		TakesScreenshot ts = (TakesScreenshot) d;
+
+		// get the screen shot as a file
+		File source = ts.getScreenshotAs(OutputType.FILE);
+
+		// a destination file where we will store the screen shot
+		String destinationFile = System.getProperty("user.dir") + "/reports/" + testCaseName + ".png";
+
+		// copy the screen shot to store from source to destination
+		FileUtils.copyFile(source, new File(destinationFile));
+	}
+	
+			
+			------------------
+		
+		-> Now, in above code "FileUtils" has come from "common io" selenium 
+		dependency
+		-> New version of selenium, common io is a separate dependency we need
+			bring the dependency from mvn repository and put it in pom.xml
+			
+			-----------------
+			<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+			<dependency>
+    		<groupId>commons-io</groupId>
+    		<artifactId>commons-io</artifactId>
+    		<version>2.11.0</version>
+			</dependency>
+			-----------------------------
+			
+		
+		
+		
+		
+	
+			---------------------------
+			Now, in listener class (Naz_Listeners) , in "onTestFailure" method
+			write the below code. and extend the Base_Class as we are using the
+			"getScreenShotPath()" method from base class
+			
+			----------------------
+		
+			public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		WebDriver d = null;
+		
+		// to get the failure method name.
+		String testMethodname = result.getMethod().getMethodName();
+		try {
+			d = (WebDriver) result.getTestClass()
+			.getRealClass().getDeclaredField("d").get(result.getInstance());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+
+		}
+		try {
+			getScreenShotPath(testMethodname, d);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			}
+		-----------------------------
+		
+		
+		
+		
+		-> Now whenever we use the testNG Listeners , we need to inform it 
+		to testng.xml file 
+		 After the suite tag in testng.xml just below 
+		 the suite tag pass the below code
+		 
+		 --------------------
+		
+		<listeners>
+			<listener class-name ="resources.Naz_Listeners"/>
+
+		</listeners>
+		-----------------------
+		
+		
+		LECTURE 205 :- 
+		
+				"EXTENT REPORT"
+				
+		-> So, as we know we use extent report to generate a report which 
+		will show the pass and fail tests, who did the test when the report happen
+		It just a like report to make it understandable for client
+		
+		1)	Let's first create a class inside the resources package and give 
+			name "ExtentReporterNG"
+			
+		2)	Now, bring the extent reporter dependency from mvn reposiotory and 
+			put it in pom.xml file.
+			
+			---------------------
+			<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+				<dependency>
+    				<groupId>com.aventstack</groupId>
+    				<artifactId>extentreports</artifactId>
+    				<version>5.0.9</version>
+				</dependency>
+				-------------------------
+				
+		3)	 Inside the class write the below code
+		
+		------------------------
+		
+		 static ExtentReports extent;
+
+	public static ExtentReports getReport() {
+
+		String path = System.getProperty("user.dir") + "/reports/index.html";
+
+		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+
+		reporter.config().setDocumentTitle("Naz Automation");
+		reporter.config().setReportName("Automation Selenium Example");
+
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("Tester Name", "Nazmul Mahe Alam");
+		
+		return extent;
+
+			}
+		
+		
+		----------------------
+		
+		-> Here , in the above method we are return an ExtentReports type 
+			variable "extent" which is a class variable so that all the places 
+			where we will invoke this method, it can use its class variable
+			"extent"
+			
+			
+		4) Now, we don't need to call the the below code in every test case.
+		What we can do in Listeners class (Naz_Listerners.java) there is a method
+		called "onTestStart()" we can modify the below code and put it inside that
+		method.
+		------------------------------------------------------
+		//Before Modifying
+		 ExtentTest test = extent.createTest("Test Name");
+		--------------------------------------------------	  
+		
+		
+		-> this below code will create a variable in every test when it will start
+		to generate the report for each test cases.
+		--------------------------
+		//After Modifying
+		
+		ExtentReports extent = ExtentReporterNG.getReport();
+		
+		ExtentTest test;
+		@Override
+		public void onTestStart(ITestResult result) {
+		
+		 test = extent.createTest("Test 01 ");
+		
+
+		}
+	---------------------------------------
+	
+		-> remember extent variable and getReport() method in "ExtentReporterNG"
+		are now static because we didn't create any object in "Naz_Listerners"
+		just call the method through class Name.
+		
+		5) Now in "OnFinish()" method we can put 
+		
+		--------------
+		"extent.flush();" 
+		-----------------
+		
+		to flush after every test.
+		
+		6)	 Now in "onTestSuccess" method inside the listeners we can put
+		
+		------------------------
+		@Override
+	public void onTestSuccess(ITestResult result) {
+		
+		test.log(Status.PASS,"Test has passed");
+	}
+	-----------------
+	7) and on Test failure method "onTestFailure" we put  
+	
+	--------------------------------
+	// it will bring the error from console
+	"test.fail(result.getThrowable());
+	-------------------------------
+	
+	
+	8) Till now, this mechanisim will work for sequential test
+	
+	9) put this code 
+	-------------
+	result.getMethod().getMethodName()
+	---------------
+	to get the name of method which is passed and which is failed with their name.
+	
+	
+	
+	
+	
+	LECTURE 206 :-
+	
+	
+	
+	
+	"Parallel Execution for Thread Safe"
+	
+	-> Now, Above code is for sequential test but if we want to test all the tests
+		In parallel, the "test" object will be over ridden each time each test
+		case is called in "listeners" class(Naz_Listners)
+		To make it thread safe put the below code in "Naz_Listeners" class
+		
+		----------------------------
+		
+		ExtentTest test;
+		ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+		
+		@Override
+	public void onTestStart(ITestResult result) {
+
+		test = extent.createTest(result.getMethod().getMethodName());
+
+		// ----------------This line for parallel test only-------------
+		
+		/*-
+		Set the test object as thread safe by setting test object inside
+		 ThreadLocal object "createTest"
+		 */
+		
+		createTest.set(test);
+		
+		// ------------------parallel ends ------
+
+	}
+	
+	
+	--------------------------------
+	
+		-> Now, we have to attach the screenshots ,
+			
+			=> Come on to the "Onfailure" method then in 2nd try block write this
+			code 
+			
+			----------------------------
+			
+			createTest.get().addScreenCaptureFromPath
+			(getScreenShotPath(testMethodname, d), 
+					result.getMethod().getMethodName());
+			
+			//getScreenShotPath(testMethodname, d) put this line in argument
+			// if this line is alone because this will return the path of
+			// screenshot		
+			------------------------------------
+			
+				=> This above line capture the screenshot from where we have 
+				stored the screenshot in first argument and in 2nd argument
+				 it gives the method name of that failure screenshot.
+				 
+			[ REMEBER, selenium took screenshot and place it in project's 
+			report folder thats part 1 and 2nd part is pull the screen shot 
+			from your local system and push it in extent report]
+			
+				=> Next, go to "Base_Class" and modify the "getScreenShotPath()"
+				 method , I mean make it return type "destinationFile" which is
+				  a String.
+				 
+				=> DON'T FORGET to use [parallel = "tests"] in testNG.xml in side
+					the suite tag as we are running all the tests together.
+					
+					
+			
+			LECTURE 207 :-
+			
+			Suppose for end to end framework we have a test and we need to go through
+			10 pages then need to perform our test. So for that according to page
+			object pattern we created page object for each page and created  objects
+			in the test cases to call or navigate through these pages but which is 
+			 not a good idea right? 
+			 
+			 
+			 So Now,
+			 
+			  As in Landing page when we want to go login page I mean click on log
+			  in button it's always lands on log in page so now we will modify the 
+			  method "go_Sign_In_01" in "landingPage"
+			  
+			  ----------------------------------
+			  //BEFORE
+			  
+			  public WebElement go_Sign_In_01() {
+					 return d.findElement(sign_In);
+					
+			}
+			  
+			  ----------------------------------
+			  
+			  
+			  --------------------------------
+			  //AFTER 
+			   public LogIn_Page go_Sign_In_01() {
+			   		
+			   		// clicking the log in button
+					d.findElement(sign_In).click();
+					
+					// creating an object of login page to use the locators 
+					// I mean method of LogIn_Page
+					LogIn_Page logInPage = new LogIn_Page(d);
+						return logInPage;
+			}
+			  
+			  // The return type is "LogIn_Page
+			  --------------------------------
+			  
+		After that in, "TestCases_Class" class use 
+		
+		---------------------------------
+		// putting this in a "LogIn_Page" type variable "logInPage"
+		LogIn_Page logInPage = lang_page.go_Sign_In_01();
+		-------------------------------
+		remove the "LogIn_Page logInPage = new LogIn_Page(d);" as we already
+		declared in go_Sign_In_01() method
+		
+		
+		[ When we know that a method will direct to a page (such as log in button)
+		 so why don't we declare the object of that page (log in page) inside 
+		 that method? It's a good practice which will help to reduce the code
+		 amount or will optimise the code.]
+		 
+		 
+		 Now, as in "LogIn_Page" there is a forgot password button which will
+		 direct us to forgot password page let's create a method 
+		 "getForgotPassword" which will have a return type "ForgotPasswordPage"
+		 and it will click the forgot password link as this link will direct 
+		 to a new page thats why we declared it in the method and put a return
+		 type in class name (ForgotPasswordPage)
+		 
+		 1) check the LogIn_Page 's "getForgotPassword" method
+		 
+		 2) Go to the ForgotPasswordPage to understand the page factory object
+		 declaration.
+		 
+		 3) Now,create a variable which is ForgotPasswordPage type in
+		  "TestCases_Class".
+		  
+		  ----------------------
+		  ForgotPasswordPage fp =logInPage.getForgotPassword();
+		  ----------------------
+		  
+		  
+		  
+		  
+		 			LECTURE 156 :- 
+		 
+		 JENKINs is one of the most important tool in software industry for develop
+		 -ment and testing. Jenkins is a continuous integration tool which is 
+		 primarily developed for automation. Continuous integration means, building
+		 the jars, pushing the code into the website. whatever can be automated 
+		 instead of manual testing , that can be done in jenkins.
+		 
+		 -> Suppose, all my test should run on 2:00 AM daily.
+		 
+		 -> Once developer pushes the code automatically the smoke suite will be
+		 	executed automatically.
+		 
+		 -> Smoke, integration  test can be done by jenkins.
+		 
+		 -> jenkins run on his own server, we need to set java and maven version 
+		 	to it.
+		 -> Such as , tests are failed in local machine but passed in jenkins
+		 	because jenkins automatically 
+		 	
+		 	
+		 	LECTURE 157 :-
+		 	
+		 	Basically, Wherever you will work in a company, The DevOps guys will
+		 	install the jenkins for me to use it .
+		 	
+		 	INSTALL jenkins :-
+		 	
+		 	1) Go to jenkins website and download the generic java package in local
+		 	system.
+		 	
+		 	2) the go to the command prompt(terminal)  and go to the directory 
+		 	of jenkins folder where we have down loaded it.
+		 	then write the following code 
+		 	
+		 	" -----> java- jar jenkins.war -httpPort 9090 <-----"
+		 	
+		 	
+		 	
+		 	So after log in to jenkins
+		 	
+		 	1) -> manage jenkins -> global tool configuration
+		 	2) Now add jdk path and maven path inside the configuration.
+		 	
+		 	3) Now, create a job in Jenkins
+		 	  i) new item -> give name to the project - FreeStyle Project
+		 	  
+		 	  ii) give project path
+		 	  iii) mvn command (mvn test). and save
+		 	  
+		 	  iv) now , build the jobs then it will take some time and will give
+		 	  you the result of the tests.
+		 	  v) you can see everything after clicking the build result.
+		 	
+		 	
+		 	4) Now download testNG plugin in jenkins then configure the project
+		 	again and at the end we will see , add after build action, there
+		 	you will see "Add TestNG result" add it and save.
+		 	
+		 	
+		 	5) Now, to run test automatically there is something in configure
+		 	called "build  periodically" 
+		 	
+		 	 M	H	D	M	DAYWEEK
+		 	 30	8	*	*	*
+		 	 
+		 	 -> This means my test will automatically build at 8:30 AM in the
+		 	 morning everyday and every morning.
+		 	
+		 	
+		 	
+		 	6) if we run the test, forget about build periodically, we will see
+		 	the testNG result
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	LECTURE 210 :- 
+		 	
+		 	
+		 	"Build with parameters in jenkins" 
+		 	
+		 	
+		 	=> Suppose, in our jenkins we will decide which browser we should 
+		 		use, thats why we can send some parameters and value by mvn 
+		 		command in our jenkins to run the code in our desire platform.
+		 		
+		 		
+		 		1) my client will use mvn command to change the browser name from
+		 		mvn command prompt, not from my codes. So, my client will decide
+		 		which browser they will use , chrome or fire fox or anything.
+		 		
+		 		To do so, 
+		 		change the code
+		 		
+		 	------ String browserName =	prop.getProperty("browser");------
+		 	
+		 	into 
+		 	-----String browserName = System.getPropertry("browser");----
+		 		
+		 		2) run the mvn command in terminal or cmd command
+		 		
+		 		-----" mvn test -Dbrowser = chrome "----------
+		 		
+		 			-> here "-D" is a command not a mistake "browser" is the key
+		 			
+		 				and "chrome" is the value.
+		 	
+		 	
+		 	LECTURE 211 :- 
+		 	
+		 	i) To add parameter, in jenkins click on "configue" now , then 
+		 	 click "This project is parameterised" name ="browser" , then 
+		 	 click choices and put the choices separate line like
+		 	 -----
+		 	 chorme
+		 	 firefox
+		 	 IE
+		 	 safari
+		 	 ------
+		 	 
+		 	 ii) Now, at the end of the configure there is "Build Steps" inside
+		 	 it 
+		 	 	"Invoke top-level Maven targets" where we will put 
+		 	 	
+		 	 	--------------------
+		 	 	test -Dbrowser = "$browser"
+		 		--------------------
+		 	
+		 	 -> dollar sign is an indication of jenkins variables. this code 
+		 	 will parameterize jenkins job into multiple browser options. and when 
+		 	 we will build the jobs there will be options "build with paramters".
+		 	 our client can choice the browser by themselves without modifying the 
+		 	 actual code. 
+		 	
+		 	
+		 	LECTURE 212: -
+		 	
+		 	"How do you achieve encapsulation in java through selenium?"
+		 	
+		 	Answer: - declare the data such as locators in page object as private 
+		 			and their accessory method should be in public. we don't know
+		 			the data but we know how to do the process such as to perform
+		 			any task through the data like click, send keys.
+		 		
+		 	=> check in "landingPage" class where all the locators I declared as
+		 	private 
+		 	
+		 	
+		 	LECTURE 213 :- 
+		 	
+		 	"Common directory. remove hard coded path from code"
+		 	
+		 	-----------------------------
+		 	System.getProperty("user.dir")+
+		 	"/src/main/java/resources/data.properties");
+		 
+		 	----------------------------
+		 	
+		 	-> This  above code is a common path for every machine.
+		 		Such as , NAZMUL machine has different location for this project.
+		 		JOY has different location for this project as they have different
+		 		machine macoS and windows.
+		 		
+		 	LECTURE 214 :- 
+		 	
+		 	=> I want to run the test without executing my chrome or browser
+		 	 to do so , we can write 
+		 	--------------
+		 	 
+		 	ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			d = new ChromeDriver(options);
+		 		
+		 	---------------
+		 
+		 
+		 => Now, go to jenkins configure and add "headless chrome" in parameter
+		 
+		 [To use headless make sure in our "data.properties" 
+		  browser = chromeheadless (for using in maven)
+		  or in jenkins use the parameter as we have written]
+		  
+		  
+		  LECTURE 215 :-
+		  
+		->  When we want to use something in our every test case class like 
+			variables, methods those time we can create a class which will be 
+			extended in  every test case class. such as base class.
+		  
+		 
+		-> When we want to modify any method or variable those time we use 
+		interface such as in "Naz_Listeners" class which is implemented by
+		 "ITestListeners". We have have used the body of every methods from 
+		 "ITestListeners" interface such as "OnTestStart" ,"OnTestFinish",
+		 "OnTestSkip" we have given these methods a body (go to Naz_Listeners
+		 class you will see the modification of each methods.
+		 
+		 -> When all object shares common property we use static 
+		 
+		 -> REMEMBER, in our selenium framework for every tests class we declared
+		 a d (web driver variable) as a local variable to that class so that 
+		  we run our tests in parallel it will  impact on the browser as 
+		 overridden but in sequential its okay to use the "d" of "Base_Class".
+		 
+		 So if the "d" is static it will be overridden every time it will be 
+		 called in parallel it will show something unexpected output.
+		 
+		 [To check it remove all the "d" from test classes except "Base_Class"
+		 and run from "testng.xml" you will see something unexpected and make
+		 sure in "testng.xml" in suite tage [parallel = "tests"] is written.
+		 
+		 
+		 LECTURE 216 :- 
+		 
+		 
+		 -> If we have multiple test in a page , then we don't need to create 
+		 separate class for each test case.
+		 
+		 -> As there is a class already we can define the  multiple 
+		 	"@Test" in the class. Which means browser will be open for one time
+		 	but will perform  all the tests in the class. 
+		 	
+		 	Make sure you  declare the class object as public and initiate 
+		 	them in each "@Test"  method.
+		 	
+		 	
+		 	LECTURE 223:- 
+		 	
+		 					"SELENIUM GRID"
+		 	
+		 	
+		 	
+		 	- [ ] Selenium grid is nothing but running test in multiple 
+		 	machine parallel.
+
+
+			- Client:- is nothing but our selenium raw code . Like local machine
+			
+			- Router :- request from client will go to the router. From router 
+			it will be directed to the distributor who is nothing but reads the 
+			code and properties to direct code into the exact node (machine). 
+			
+			The distributor will send request to node to execute the code. 
+			When distributor send request to nodes to perform a task which 
+			has come from client , distributor will send the session details to
+			 session maps like session id and node details. So, now client send 
+			 first line of code through router , and distributor and found out 
+			 the node. So, if the code for the same test is sent by the client 
+			 , router will now talk to the session map and will look for the 
+			 session id and node. When router gets, then is it passes code 
+			 directly to the nodes. Distributor is used only for the first 
+			 time to create a session for a test. 
+			 
+			 
+			 LECTURE 224 :-
+			 
+			 "SELENIUM GRID INSTALLATION"
+			 
+			1)  Download Selenium Grid jar and place it where I have kept
+			 the drivers like chrome driver, gecko driver. 
+			
+			2) open the terminal from that folder and in terminal write
+			
+			--- java -jar selenium-server-4.3.0.jar hub ------
+			
+			 -> Now, at the end you will see 
+			 	"Started Selenium Hub 4.3.0"
+			 	-> Now, go to "http://localhost:4444/ui" you will see a 
+			 	Selenium Grid Page 
+
+		 [Hub and node can be same system which is that when hub receives 
+		  request it will assign to your machine as it is also a node]
+		  
+		  3) Now , open a new tab from terminal and put the below code
+		  to start your machine as a node also 
+		  
+		  --java -jar selenium-server-4.3.0.jar node --detect-drivers true---
+		  
+		  This command starts the machine as node and gives the path of drivers
+		  make sure the drivers and selenium server is in same folder.
+		   
+		   	GO to http://localhost:4444/ui you will see the difference
+		   	
+		   	
+		   	LECTURE 225 :-
+		   	
+		   	"SELENIUM GRID in different machine as node"
+		   	
+		   	To use other machines as node. 
+		   	 
+		   	 i) Make sure you installed all the browsers on that particular 
+		   	 machine.
+		   	 
+		   	 ii) Make sure you put all the drivers and selenium server jar
+		   	 	in the same folder.
+		   	 	
+		   	 	
+		   	 	1) Go to the command prompt of that machine and go inside the
+		   	 		folder and run the same "node" command
+		   	 		
+		   • Start the Node in different Physical Machine : -
+		   -----------------------------------
+			java -jar <SeleniumJarname> node --detect-drivers true 
+			-- publish-events tcp://<ipaddressofhub> --subscribe-events 
+			tcp:// <ipaddressofhub>
+			---------------------------------
+		   
+		   => Version of selenium server can be different 		
+		   	 	 
+		   	 	 2) Now, we need to register new node to our hub machine.
+		   	 	  There are two events publish events and subscribe events.
+		   	 	  
+		   	 	  -> In hub there is "XPUB" binding is 4442 and XSUB binding 
+		   	 	  is 4443. 
+		   	 	  -> IP address is in the last in hub terminal
+		   	 	  -> So according to my system if I rewrite the code it will be
+		   	 	  like  
+		   	 	 
+		   	 	 -----------------------------------
+			java -jar selenium-server-4.3.0.jar node --detect-drivers true 
+			-- publish-events tcp://192.168.2.15:4442 --subscribe-events 
+			tcp://192.168.2.15:4443
+			---------------------------------
+		   	 	 
+		   	 	 
+		   	 	 LECTURE 226 :- 
+		   	 	 
+		   	
+		   	Now, write selenium code then go through the below processes 
+		   	
+		   	-> Create a new java project and add 
+		   	"Java build path -> class path -> add external jars -> 
+		   	add the selenium server jar and apply it.
+		   	
+		   	Now, go to the "Naz_Selenium_GRID_LECTURE_222_TO_227" project 
+		   	see the definitions of the classes and comments then you will under
+		   	stand.
+		   	
+		   
+		   -> Make sure you convert the project in TestNG and parallel mode is 
+		    in "classes"	 as we have two classes on that package and we want 
+		    to run two classes parallel.
+		   
+		   -> Remove (.) dot from class names in testng.xml file as the classes 
+		   	 now in default folder.
+		   
+		   REMEBER :- 
+		   In real time what people do
+		   
+		   	i) All the hub processes can be in one machine
+		   	ii) eclipse java code (client) can be one machine
+		   	iii) they create multiple nodes 	 
+		   	 	 
+		  -> No matter from which machine you are running your tests, you are
+		  asking to reach the IP address [new URL("http://192.168.2.15:4444")] in
+		   RemoteWebDriver class. So, it doesn't matter your hub and actual 
+		   client (selenium code) is the same machine.
+		 
+			

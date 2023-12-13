@@ -1,0 +1,89 @@
+
+
+		LECTURE 161	:-
+		
+		-> EXTENT REPORT are used to create testing reports.
+		Such as test success rate, failure rate, who did the test
+		and a well organised html report.
+		
+		
+		To use EXTENT REPORT in our project.
+	
+	1)	 create a maven project with
+	 the following rules.
+	 
+	 	i) File -> New-> Other-> Maven -> Maven Project
+		
+	   ii) Next->Next-> search with anyone of this following
+	   		make sure they are same.
+	   		
+	  iii) "org.apache.maven.archetypes" "maven-archetype-quickstart"
+	  
+	   iv) Next-> provide a group id which is the  package name and
+	   		an artifact id (Project name) .	
+	   		
+	   	v) click on "Finish".
+	   	
+	   	
+	   	2) SELENIUM & TESTNG DEPENDEPCY: -
+		
+		 vi) Now, go to the project and you will see a file name 
+			"pom.xml"
+			
+		vii) Now inside the "pom.xml" file just right above the "build" tag, 
+			 create a "dependencies" tag. Then inside the tag we need to
+			  put 2 dependencies one for "selenium" & one for "TestNG".
+			
+		viii) SELENIUM:- "https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java"
+			Copy and paste the latest dependency inside the 
+			xml file. This is for SELENIUM
+			
+		  ix) TESTNG :- "https://mvnrepository.com/artifact/org.testng/testng"
+			Copy and paste the latest dependency inside the 
+			xml file. This is for TESTNG
+			
+		  x)  Extent Report :- "https://mvnrepository.com/artifact/
+		  com.aventstack/extentreports/3.0.0"
+		   copy and paste the extent report dependency inside the 
+		   pom.xml.
+		   
+		  
+		  3) Now, to use the Extent report , let's create a method
+		  	inside the method lets declare two important class which 
+		  	are "ExtentReports" & "ExtentSparkReporter"
+		  	
+		  	
+		  	
+		  	---------------------------------
+		  	
+		  	String path = System.getProperty("user.dir")+
+		  	"/reports/index.html";
+		  	ExtentSparkReporter report = new ExtentSparkReporter();
+		  	
+		  	--------------------------------
+		  	
+		  	xi) Here , the "path" variable, getProperty creates a path
+		  	automatically inside the "projectName/reports/index.html"
+		  	suppose other developer may have different project name. 
+		  	They might want to create an extent report. Those time
+		  	this will create a folder name reports and a file name 
+		  	index.html inside that project for that developer.
+		  	
+		  	Now,
+		  	
+		  	-> this class is responsible to driver all the report 
+		  	execution
+				-------------------------------
+				extent = new ExtentReports();
+		  	
+		  	----------------------------------
+		  	
+		  	
+		  	
+		  	
+		  	
+		  	
+		  	
+		  	
+		  	
+		  	

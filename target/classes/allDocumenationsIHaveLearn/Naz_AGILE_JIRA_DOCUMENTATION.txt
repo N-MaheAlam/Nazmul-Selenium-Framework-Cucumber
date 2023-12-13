@@ -1,0 +1,1414 @@
+
+
+
+   CAPITAL Letters represents the button in Jira.
+   
+   
+   project begins with client requirement.
+   Agile is a set of principles and scrum is a framework 
+   for getting s#it done. 
+   
+   Edge test cases:- Writing the test cases in out of box thinking.
+   
+-	Agile is an iterative approach to project management and software development that
+   helps teams deliver value to their customers faster and with fewer headaches. 
+   Instead of betting everything on a "big bang" launch, an agile team delivers work
+   in small, but consumable, increments. Requirements, plans, and results are 
+   evaluated continuously so teams have a natural mechanism for responding to change
+   quickly.
+   
+   
+ -	Scrum is a lightweight framework that helps people, teams and organizations 
+ 	generate value through adaptive solutions for complex problems.
+ 	
+ 	
+ 
+ -	Now, go to Jira online software create account with all the feature.
+  
+
+
+-	Now, Product owner will create user stories for us and will put it in back log.
+
+	There there is a term called "backlog refinement/Grooming" where all the Agile
+	team members and business owner will present and will discuss about all the stories.
+	Remember it is an important meeting.
+	
+	
+	 Now, create some Story in BACKLOG.
+  
+  
+  
+  
+  		EPIC:- 
+  		
+  		An agile epic is a body of work that can be broken down into specific tasks 
+  		(called user stories) based on the needs/requests of customers or end-users. 
+  		Epics are an important practice for agile and DevOps teams.
+  	
+  	
+  		STORY:- 
+  		
+  		When we break down an EPIC ,it consists of several USER STORIES. Card Example
+  		 
+  		 
+  		COPONENT:- 
+  		
+  		Component is defining the team. suppose team 1 will develop PHP, so team 1
+  		is a component. Team 2 will test the devloped PHP code, So team 2 is also a
+  		component.
+  		
+  		
+  		Releases:- 
+  		
+  		Suppose the development team is going to publish the code. So the are going
+  		to create a version of that code. There will be start date and end date of 
+  		that release.
+  		
+  		So when you create a user story , you should also give when the story is going
+  		to release. So, in every release there will be stories which should be done to.
+  		such as there will can 10 stories which need to be completed in relase version
+  		2.0
+  		
+  		
+  		DESCRIPTION:- 
+  		
+  		In Every Story business owner will write down , description and acceptance 
+  		criteria. There is a method for description which he/she will follow 
+  		
+  		As a [person], [want to] , [so that]
+  		
+  		such as 
+  		
+  		As a credit card holder , I want to put username and password so that 
+  		I can log in.
+  		
+  		Remember, the description will be as small as it can be but acceptance 
+  		criteria where we can define  details like, there will be a text box for 
+  		email, validate email, password length , special character use , what
+  		if put password which does not meet the condition, should I through error? etc
+  		
+  		
+  		Business owner will only describe what he/she needs. And acceptance criteria
+  		should be discussed with the whole team, Product owner will create the stories
+  		for the project.
+  		
+  		All the user stories which are created but yet to develop will go under 
+  		BACKLOG.
+  		
+  		
+  						""""""" LECTURE 10 """""""""
+  						
+  				
+		Backlog refinement / Grooming
+		
+		When BACKLOG will be filled with user stories , business owner will discuss
+		about the user stories with agile team member.
+		Here the business owner will describe the user story and description. 
+		In BACKLOG , there will be acceptance criteria for each story. Which means the
+	 	QA will ask to the business owner something such as if he should put error 
+	 	message if your put wrong email password, what would be the size of edit box, 
+	 	how it will be viewed in mobile. Or after discussing with the business owner we 
+	 	can add one more user story for mobile.
+	 
+		There will be size (pointer )given for each user story such as 1,3,5,8 . 
+		3 means one developer will need 3 days to make this user story. And the size 
+		will be decide by voting of the whole time where every one will be present.
+		Scrum master will collect the vote any one in the grooming can ask why it will
+		take 3 pointer or 8.
+	  
+		Now , with final decision give the point for that user story.
+
+		Sometime product owner can attach screenshot short or anything as a COMMENT
+	 	suppose how the edit box will look like.
+	 
+	 
+  						""""""" LECTURE 11 """""""""
+
+	  	SUB TASK:- 
+	  
+		
+		When we are done with backlog refinement. Now for a story we define SUBTASK 
+		which means sub task we create as development for this story, manual testing
+		for this story , automation testing for this stroy.We create these things and
+		 assign to developer, tester, UI expert and so on.
+	 
+	 
+	 
+	 					""""""" LECTURE 12 """""""""
+	 					
+	 					
+	 	SPRINT:- 
+	 
+	 
+	 	A sprint is a short, time-boxed period when a scrum team works to complete a 
+	 	set amount of work. Sprints are at the very heart of scrum and agile 
+	 	methodologies, and getting sprints right will help your agile team ship better
+	  	software with fewer headaches.  
+
+	
+		“With scrum, a product is built in a series of iterations called sprints that
+	 	break down big, complex projects into bite-sized pieces," said Megan Cook, 
+	 	Group Product Manager for Jira Software at Atlassian.  
+	 	
+	 	
+	 	
+	 	NOw, Go to BACKLOG and CREATE SPRINT
+  		
+  		
+  		Its, the duty of product owner to put the priority of BACKLOG. Such as ,
+  		The product owner wants the text box first, then header, the footer
+  		So, drag up and down in JIRA to set the priority.
+  		
+  		
+  		Before, starting the SPRINT, at least one week before we should again do
+  		Backlog refinement/ Grooming. And we should also focus on sprint planning
+  		that what we are going to do in this sprint before it starts. It focus on
+  		what are the stories we are going to bring into this sprint, do the 
+  		stories have everything in details like story point, description, I mean
+  		we should only bring the stories which are completely ready to develop 
+  		by picking them in a sprint.
+  		
+  		Now, Suppose my team has goal to complete 12 pointers in 10 days (each sprint
+  		is define as 10 days). but we I try to pull the stories based on priority in 
+  		my sprint, suppose it showing 13 or more pointers. Then I can ask the business 
+  		owner to do a small pointer which is low priority then can add in my sprint
+  		 and remove a pointer by asking business owner.
+  		 
+  		 
+  		 GO BACKLOG -> Pull the stories -> 
+  		 
+  		 
+  					 """"""" LECTURE 13 """""""""
+  		
+  		
+  		 Scrum Board:- 
+  		 
+  		 When sprints will be created we can see these in BACKLOG.
+  		 If we click on that sprint it will take us to the Scrum board where it will
+  		 show the sprint remaining time, status of the stories.
+  		 
+  		 We can move the stories from TO DO to IN PROGRESS or DONE. But it will be
+  		 done by the business owner or by the QA.
+  		 
+  		 
+  		 			""""""" LECTURE 15 """""""""
+  		 			
+  		 			
+  		 RETROSPECTIVE:- 
+  		 
+  		 This meeting is held once the sprint is completed. This could be held in the 
+  		 last day of sprint.
+  		 
+  		  In meeting , What went well and what didn't went well during the sprint
+  		  
+  		- In retrospective meeting what went well and what did not went well.  Such as
+  		 stories wasn’t clear for developer. QA did some unnecessary validation.
+		- In retrospective meeting we will not only discuss about  what wasn’t well 
+		hut also will come up with solution.
+		- Once the retrospective meeting is done , scrum master will document all 
+		the action items and will send through email to implement it in next sprint. 
+		
+		- What is sprint planning  
+		
+		 The plan we do before starting the sprint such as our sprint will start on
+		 tomorrow , So we did a sprint planning yesterday.
+		 
+		- What is backlog refinement 
+		
+		When we will have all our stories in backlog, we will select a story and
+		the business owner will make everyone understand about the story, provides
+		descriptions. This will continue for each story that will take to the 
+		next step which is sprint to develop in our project.
+		
+		- What is epic 
+		
+		 Epic is a combination of multiple stories such a log in system is an epic
+		 where email & password, submit button, logo, forget password each is a story.
+		 
+		- What is story 
+		An epic is divided into multiple stories in agile methodology & scrum framework.
+		
+		- Component 
+		
+		- Bug
+		- Pointer 
+		- Sprint 
+		- Issue
+		
+						""""""" LECTURE 16 """""""""
+		The only difference between scrum and Kanban is , Kanban doesn’t have any
+		 SPRINT. Kanban only has the relase date 
+		Just have the dead lines and work on stories  
+		
+		-> Now create a Kanban project "Naz Kanban 01" in Jira 
+  		 
+  		
+  		
+  		
+  						""""""" LECTURE 17 """""""""
+  						
+  						
+  		HOW to derive test cases or uses cases.
+  		
+  		
+  		 We should also know about project architecture.
+  		 
+  		 
+  	-	To write use cased we need to know about the Project Architecture. Then we can 
+  		come up with proper test cases I mean who to test in different aspects.
+  		
+  		
+  		EXAMPLE:-
+  		
+  		Suppose, Client logged in Net Banking website. Now, My team wants  me to test
+  		whether the  "account balance" is showing correctly or not.
+  		
+  		
+  		->	A Normal QA will come up with only one test case such as "Verify balance
+  			is displaying or not".
+  			
+  			1) [Verify Balance is displayed or not]
+  			
+  		->	But we have to think very deeply as a QA. Suppose the balance is coming
+  			 coming from a database. We will pull the name or ID of that customer 
+  			 to check balance and will compare with web site and the database. This 
+  			 kind of testing we call [FUNCTIONAL TESTING]. We are functionally testing
+  			 whether the balance is showing properly from database to website end to end.
+  			 
+  			 2) [Verify Balance is displayed correctly from database or not]
+  			 
+  		->	If I only want to verify whether the amount number is showing or not
+  			in website then it is [ UI TESTING ]. Just check the value is present or not
+  			in website. Don't need to go deeply inside the database or checking through
+  			APIs.
+  			
+  				UI there can N number of test cases 
+  				
+  				1) Negative balance how account displays.
+  				3) Large amount 8 digits how the balance showing.
+  				4) how cents are displaying.
+  				5) When shrinking the web site how the balance are showing. 
+  				   such as is there is showing on top or bottom after shrinking.
+  				6) How it will look in mobile view.
+  				
+  			
+  		->	In different formats how my account balance is showing, is it breaking
+  			the CSS style when balance is 0 or more then 8 digits. If the balance
+  			is negative how it is appearing in website. 
+  			
+  			WE CAN DERIVE "N" NUMBER OF TEST CASES	
+  			
+  			
+  						""""""" LECTURE 18 """""""""
+  			
+  			
+  		We should know about the project architecture but that doesn't mean I have 
+  		to know all the codes. 
+  		I should know how the system is integrated. How database is giving data.
+  		How  APIs get response, is the response are correct. The value that we are
+  		getting from API response in front end, is it correct value.
+  		
+  		Project architecture & how the systems (Front end, back end, APIs) are 
+  		integrated we need to know that to develop test cases.
+  		
+  		How values are coming by APIs from database or other places.
+  		
+  		
+  		Sometimes when testing a value, first from front end it sends request to APIs
+  		then APIs sends the request to the Destination and get back responses which 
+  		it sends as a response to the client (front end)
+  		
+  		As a QA you should as think like a tester to get the highest value from
+  		product.
+  		
+  		JSON/XML is a format of sending data.
+  			
+  			
+  			
+  						""""""" LECTURE 19 """""""""
+  			
+  			
+  		Suppose, Around 5000 users trying to get their account balance by same APIs,
+  		the users are trying to log in at the same time using same APIs.
+  		
+  		How, the APIs behave when it has so many users , how is the performance.
+  		So, we need to do, performance testing like stress testing, load testing
+  		
+  		Suppose try to stress your APIs with 5000 users and stress it for 15 minutes 
+  		keep sending the request
+  		
+  		
+  		So, This lecture 19 and 18 is really important .
+  		
+  		UI Testing - I can use Selenium web driver, cypress,
+  		API testing - SOAP /REST Assured
+  		Database Testing
+  		
+  		3 section normally for testing in development.
+  		
+  		
+  						""""""" LECTURE 20 """""""""
+  		 
+  			
+  			
+  			
+  			Domain knowledge about the project. 
+  			Suppose if I do a specific job what will happen beside that.
+  			
+  			An Example of end to end testing:- 
+  			
+  			Suppose, I want to make a payment in my credit card. I have 500 dollar 
+  			balance. So, from my bank account in my credit card section I see a 
+  			balance of 500 & there is a button MAKE PAYMENT. Then it will take me
+  			to the payment page where I will make a payment from my checking account
+  			to credit card and I will see a success message. Its an end to end 
+  			process Now test this.
+  			
+  			Balance 500, Make payment -> Select from to account-> make payment ->
+  			success message.
+  			
+  			NOW, test this.
+  			
+  			So, what I will do from testing?
+  			
+  			1) Go to the credit card section, make a 
+  			payment, select from checking, click on button, verify the success 
+  			message. If I get the message its an end to end testing.
+  			
+  			2) if there is any failure , I will see something is wrong.
+  			
+  			So, this is a happy path testing. we also call it functional testing
+  			because here , you are checking end to end processing making until 
+  			the payment is made.
+  			
+  			BUT THIS IS NOT ENOUGH, think out of box.
+  			
+  			=>	When I made a successful payment, the amount should be deducted from
+  				my checking balance.
+  				NOT ONLY that, The balance should also decrease from back end database
+  				also. So, to check this we need the data base access or we have check
+  				by API call.
+  				
+  				
+  				SO REMEMBER, when we change something , make sure its not only changed
+  				in front end ( web page) but also in back end and affected areas( data
+  				base, API calls).
+  				
+  			=>	Next, after making the credit card payment my credit card limit
+  				should increase. 
+  				
+  				SO, in front end check the credit card limit.
+  					back end check the credit card limit. also check other systems
+  					which are associated with credit card limit.
+  			
+  			
+  			
+  			Disaster Recovery:- 
+  			When something is failed , you need to roll back your processes. such as 
+  			I make a credit card payment. The payment is deducted from my account (one
+  			API) but the payment is not added in my credit card limit (Such as Credit 
+  			fund one API). If one is failed so the whole process should fail and it 
+  			should back in its first stage where no credit card payment wasn't made.
+  			That' call disaster recovery to get back in the first situation before
+  			the action occur you know what I mean.
+  			
+  			
+  			An end to end testing can be successful when its others testing is 
+  			successful. here, comes the picture smoke testing , regression testing
+  			
+  			When credit card payment is successful , it should be successful in 
+  			database, front end, other places where credit card is involved. 
+  			
+  			
+  			
+  					""""""" LECTURE 21"""""""""
+  			
+  			
+  			Test Scenario	->	Such as password reset functionality is a test 
+  								scenario.
+  								
+  								when verifying functionality we should always,
+  								test positive cases and negative cases(test cases)
+  								
+  								
+  			Test Cases 		->	It test scenario there are multiple test types to
+  								satisfy the test scenario , that's we call test cases
+  								
+  		Actions & Output	->	 For ever test case, there is actions to perform & some
+  								 output will come.
+  		
+  		There can be some preconditions for a test scenario where all the test cases
+  		should first do the preconditions. such as for password reset, we should
+  		always go to the web site, select log in , click on forgot password for all 
+  		the test cases. 
+  		
+  		REMEMBER, we need to follow the test steps to complete the test case. each
+  		test case has its own test steps.
+  		
+  		So, when ever we write test cases there should be inputs, test steps 
+  		( actions) need to perform & output for that each steps.			 
+  			Such as, 
+  			 
+  			Test case = "Click forgot password", 
+  			
+  			Actions =
+  			
+  			1)goto to the web page.
+  			2)click sign in
+  			3)click on forgot password.
+  			
+  			
+  			Output =
+  			1) landed web page properly.
+  			2) sign in button clicked properly
+  			3) forgot button will be click and a new page will come to reset the 
+  			   password.
+  			   
+  			 
+  			 
+  			This is just showing a happy path of a test case. but for a scenario there
+  			can be 100 of test cases just imagine about the password reset.
+  			
+  			
+  			
+  					""""""" LECTURE 22 """""""""
+  			
+  			So, what ever we have seen till now in Jira is to manage the project
+  			
+  			but now as a QA we are going to focus on testing
+  			
+  			Go Jira cloud where my account is created then click on "APPS"
+  			The "EXPLORE APPS" then find with the name is search bar 
+  			 
+  			"XRAY" , this apps helps to manage the tests.
+  			 
+  			 
+  			"XRAY" is a test management tools in Jira which we will install 
+  			
+  	-	Now, When I will install the XRAY in my Jira it will show "Configure 
+  		with projects"
+  		 ->	Configure with the project that I have 
+  		 ->	Then you will see in issue type , there are also added
+  		 	TEST, TEST PLAN, TASK, TEST EXECUTION.
+  		 	
+  		 	1) Create a issue TEST.
+  		 	
+  		 		""""""" LECTURE 23 """""""""
+  		 		
+  		 		
+  		 		IMPORANT IN XRAY APPS.
+  		 		
+  		 
+  		 TEST SET 		->	Consists of TESTS(  group of test cases)
+  		 
+  		 TEST			->	Test case 
+  		 
+  		 PRECONDITIONS	->	Common actions must be ensured before the test execution
+  		 
+  		 TEST PLAN		->	The scope of  test cases & aggregate all executions for
+  		 					those test cases.
+  		 					
+  		 TEST EXECUTION	->	Used to execute test cases that are already defined. 
+  		 
+  		 
+  		 So, After configuring XRAY with the project, We we will click on "Create"
+  		 we will see the "issue type" there will 
+  		 "TEST < TEST SET < TEST PLAN < TEST EXECUTION"
+  		 
+  		 
+  		 Now, when we create a TEST there will be descriptions 
+  		 
+  		 DESCRIPTIONS	->	what we are going to test here technically give the same
+  		 					TEST name, which sprint is this TEST, is it a functional
+  		 					test, UI test, is it a negative test.
+  		 					
+  		 TEST DETAILS	->	Here , you will ADD TEST STEPS, with , ACTIONS, DATA,
+  		 					EXPECTED OUTPUT.
+  		 					
+  		 PRECONDITIONS	->	For every TEST STEP, TEST or TEST SET there can be some 
+  		 					preconditions which need to follow before executing any
+  		 					test step. So, we Can create a issue of PRECONDITION type
+  		 					or can add an existing preconditions to the test case,
+  		 					test steps, test set.
+  		 
+  		 TEST SET		->	A TEST is a part of a TEST SET. So, we can add the TEST
+  		 					in a TEST SET.
+  		 					
+  		 TEST PLAN		->	In JIRA, suppose , I want to release a product in a fixed
+  		 					date. So, to release that product I have 100 test cases 
+  		 					from which I want to run 30 test cases which as a regress-
+  		 					ion test. or I want TEST SET by team 1 will be run before
+  		 					release.
+  		 					
+  		TEST EXECUTION	->	When we have created a TEST PLAN we can also create an
+  							issue type "TEST EXECUTION". Then create or use an 
+  							existing plan. Then when we will go though each test 
+  							case we can see the status (click play button in TEST
+  							EXECUTION for that TEST ). Then you can give the status 
+  							of that TEST such as FAIL, PASS< IN PROGRESS. and we 
+  							can also create defects issue from there if we face any 
+  							defects. In TEST EXECUTION,  you can also assign a QA
+  							as a part of TEST EXECUTION who will execute the TEST.
+  							
+  							We create TEST EXECUTION FROM TEST PLAN.
+  							
+  		LINK ISSUE		->	Suppose we have a USER STORY & for that USER STORY there
+  							will be multiple TESTS. Now, we can Link these TESTS with 
+  							that STORY. 
+  							GO to each TEST< click "LINK ISSUE"< IS TEST BY or TEST<
+  							then add the issue (STORY)
+  							
+  		 
+  		 					
+  		 
+  		 		
+  		 				""""""" LECTURE 28 """""""""
+  		 		
+  		 
+  		 STLC = Software Testing Life Cycle
+  		 
+  		 
+  		 STLC consist of some terminologies which I am going to define one by one
+  		 
+  		 
+  		 Requirement Analysis:-
+  		 
+  		 
+  		 There will be a meeting held with all stake holders such as QA, Developer,
+  		 business analyst, technical leaders, system architectures where the business
+  		 owner will give high level requirements and as a QA the QA lead will discuss
+  		 among the team members about the business requirements.
+  		 
+  		 There will discuss about business requirements 
+  		 from which I will derive my test cases 
+  		 
+  		 such as client will I want go to the home page where I will see all the 
+  		 products. 
+  		 
+  		 From there as a QA I have to think elaborately and how I should derive test
+  		 cases such as 
+  		 	- have to land in the home page.
+  		 	- click on home button.
+  		 	- verify the home page.
+  		 	- what happen if I click elsewhere.
+  		 	
+  		 I have to think both positive and negative way so that I can design a least
+  			bug free test cases to catch the bugs.
+  		  
+  		
+  						""""""" LECTURE 29 """""""""
+  		
+  		
+  		TEST PLAN:- 
+  		
+  		Prepare test strategy and test plan. Test plan is mandatory in every model
+  		weather it is agile or waterfall model. Test Plan will be prepared by higher
+  		management.
+  		
+  		
+  		The test plan is prepared only after the business requirement
+  		what to test
+  		what not to test
+  		scope of the test
+  		what tools going to use 
+  		staff & training needs
+  		test duration ( for waterfall model) ( in agile , software is developed in
+  		chunks).
+  		
+  		IF a project is started those time as a Junior QA or Mid level QA you will 
+  		in Test Planning but Most of the time only Senior QA will present there.
+  		And if you are involved in the middle of a project those time requirement
+  		analysis & test plan would be done. you will just develop test cases.
+  						
+  						""""""" LECTURE 30 """""""""
+  		
+  		TEST Case Development :- 
+  		
+  		No matter which SDLC i used Requirement Analysis and Test plan will be always 
+  		present.
+  		But Test Case Development, Test Environment, Test Execution such in Agile 
+  		Test Case Development happens for every sprint.
+  		
+  		Question can be ask How do you will achieve STLC in agile?
+  		
+  		Remember Requirement Analysis and Test plan are constant but Test Case 
+  		Development, Test Environment, Test Execution are changing for every sprint
+  		every stories in agile project.
+  		
+  		This is the phase of STLC where testing team write down the detailed test 
+  		cases.Along with test cases, testing team also prepare the test data if any 
+  		required for testing.Once the test cases are ready then these test cases are
+  		reviewed by peer members or QA lead.
+  		
+  		
+  		
+  		
+  					""""""" LECTURE 31 MUST WATCH last 5 minutes """""""""
+  		
+  		
+  		Test Environment:- 
+  		
+  		When developer develop their code then the deploy in a server. Then you can
+  		view it from browser by hitting the url.
+  		
+  		and the also have a database from where the sever will get date. In server,
+  		code and database will be hosted.
+  		
+  		After developer deploy the code, now QA will also deploy the code in QA 
+  		environment. such as
+  		
+  		Developer deployed the code in "mahealamDev.com" server
+  		QA will deploy the code in "mahealamQA.com"
+  		
+  		sometimes for data , QA can tell the developer to insert some dame data in 
+  		database.
+  		
+  		Weather the code need to access the database or not, thing kind of thing 
+  		will described by developers to QA in Sprint grooming. In sprint grooming
+  		you will pick each story and try to analysis.
+  		
+  		What are the challenges you have faced in your project?
+  		
+  		ANSWER:- 
+  		
+  		Suppose, Developer A developing, left navigation where category 1, category 2
+  		category  3 button.
+  		
+  		And developer B developing , a button ADD TO CART.
+  		
+  		So, A told me to test his code but in the mean time B push his code in master
+  		branch. So, when I tried to test work of developer A, I have noticed there is
+  		no such code but the code of ADD TO CART by developer B. So, here is the 
+  		conflict. So, either I have to tell the developer A to push his code again 
+  		or I have to wait till the testing of developer B code is finished then push
+  		the code of category by developer A.
+  		
+  		
+  						""""""" LECTURE 32 """""""""""
+  						
+  			Requirement traceability matrix:- 			
+  		
+  		
+  		Suppose, there are req1, req2, req3, req4,req5, req6, 
+  		and there are 18 TC for these requirements such as TC1, TC2, TC3, TC4,
+  		TC5, TC6, TC7, TC8,TC9, TC10, TC11, TC12, TC13, TC14, TC15, TC16,TC17, TC18
+  		
+  		Traceability means we have to track for which requirement which Test cases 
+  		are going to use. In Agile methodology, for every sprint each story has 
+  		its own test cases , happy test cases & negative test cases. 
+  		Such as , req1 has TC10, TC11,TC12 . req2, TC13,TC14,TC15, req3 has ,TC16,TC17,
+  		TC18. Such this way we need to track all these 18 test cases  for which
+  		requirement for which test cases are going to use. Is there are still pending,
+  		did the test happen, what is the test status, this are the requirement
+  		traceability matrix.
+  		
+  		
+  					
+  						""""""" LECTURE 33 """""""""""
+  		
+  		
+  		TEST EXECUTION:- 
+  		
+  		Tester will carry out the testing based on the test plan & prepared test cases
+  		Bug will be reported in this face & also the areas where bug can affect. 
+  		When the bugs are fixed , then we have to run the confirmation testing to 
+  		verify that the bug has been fixed.
+  		
+  		In Agile, the QA will show the end product to product owner.
+  		
+  		
+  		TEST CLOUSER/COMPLETETION:-
+  		
+  		Once the TEST is executed then after 
+  		
+  		-	Ensure test compeletion/ test coverage. 
+  		
+  			Such as a req1 has 20 test cases
+  			and 18 test cases are tested. So, test coverage for that requirement is 90%.
+  		
+  		-	Hand Over test artifacts. 
+  		
+  			Such as I have to document all the testing 
+  			things so that If I am not here, another QA can test the product by 
+  			reading the documentation.
+  		
+  		-	Project Retrospective.
+  		
+  			Where we discuss about what we have learn from this project. what are
+  			problem we have faced , how we fixed the problem. we should from the
+  			mistakes so that next sprint or project if we fix the same problem we can
+  			fix.
+  			
+  		-	Archiving Work Products:-
+  			
+  			Such as test plan, test data we need to hand over also. 
+  			
+  			
+  			
+  						""""""" LECTURE 34 """""""""""
+  						
+  						
+  		
+  		- Status code 200,401
+  		- xpath
+  		- agile				
+  						
+  		How do you troubleshoot when something is not working?
+  		
+  		-	Normally answers are I will reach out my developer to fix the bug or 
+  			I will try with different test data sets or delete the cookies. But this
+  			are poor answers. 	
+  			
+  			
+  			
+  		1)	So, before blindly reach out to the developer team, the first thing we
+  			can check through NETWORK TAB.
+  			
+  			
+  		-	Suppose go to a website, give wrong id pass then instpect element. you
+  			will see below a network tab.
+  			
+  			
+  			Suppose the request that you are giving from API its working but not 
+  			from UI.
+  			
+  			REMEMBER, first always open the network tag then perform the action.		
+  						
+  						
+  						
+  						
+  						
+  						""""""" LECTURE 35 """""""""""	
+  						
+  						
+  		2)	Another option is checking in CONSOLE TAB in browser. when you will
+  			inspect element then at the bottom you will see CONSOLE TAB.
+  			
+  			
+  			what is front end validation?
+  			
+  			suppose, I add 3 product in my cart and it will show check out button
+  			that there are 3 product, there price name , this are the front end 
+  			validation.
+  			
+  			
+  		3)	Apps LOG SERVER:-
+  			
+  			In Agile, for developing a software this is always a log file which will
+  			generate log for every action you perform. So if there is any bug , the 
+  			log file will have the error message. So, for that we should ask developer
+  			to get access of log files , so that we can log any bug.	
+  			
+  			
+  			
+  					""""""" LECTURE 37 """""""""""
+  					
+  					
+  		ONCE the bug is confirm then how to create defect? 
+  		
+  		You will find a bug and for that bug you will create a defect.
+  		
+  		Now what are the information we need to provide about the defects?
+  		
+  		
+  		1)	Steps to produce bug
+  		
+  			such as ,	go to the log in page
+  						do not select Items
+  						then verify the check out button is disable
+  						
+  		2)	Test Data
+  						username:- sdnkls
+  						password:- dfnksdf
+  						
+  		3)	URL:-
+  		
+  		4)	Expected Result:-
+  		
+  						Added to the cart button should be disabled
+  						
+  		5)	Actual Result:-
+  						
+  						Added to the cart button is enabled
+  						
+  		6)	Time stamp:-
+  						When I have faced the bug.
+  						
+  		7)	Troubleshoot thoughts:-
+  						Describe about the bug
+  						
+  		8)	Screenshot:-
+  		
+  						Mandatory to provide the screen shot.
+  						
+  						
+  						
+  						""""""" LECTURE 38 """""""""""
+  						
+  						
+  		what is severity & priority of defect?
+  		
+  		Severity:
+  		
+		It is the extent to which the defect can affect the software.In other words,
+		degree of impact a Defect has on the application being tested
+		
+		Defect severity can be categorised into 4 class
+		
+		CRITICAL:
+		
+		This defect indicates complete shut-down of the application,nothing can proceed
+		further. such as Shop Tab not working
+		
+		• MAJOR:
+		
+		It is a highly severe defect and collapses the system.However,certain parts of
+		the system remain functional
+		Such as, Cannot add few products(Iphone 5)to Cart
+		
+		• MEDIUM:
+		
+		It causes some undesirable behaviour, but the application is still functional
+		Navigating to checkout page without selecting any orders
+		
+		LOW:
+		
+		It won't cause any major break down of the application
+		Cart is getting cleared on page refresh.
+		
+		
+		
+					""""""" LECTURE 39 """""""""""
+		
+		There normally 3 priorities 
+		
+			HIGH
+			MEDIUM
+			LOW
+		
+		Can a low severity can be high priority ?
+  						
+  				
+  		Severity means how the defect affecting the software and priority how 
+  		quickly the defect should be fixed.
+  		
+  		such as , Amazon logo name is normally misspelled in there web site such as
+  		"amzn" instead of "amazon".	This a low severity as it is not affecting to 
+  		the functionality to the software but it is high priority as the misspelled
+  		name can spoil the amazon reputation and share price can be down.
+  		
+  		
+  		DEFECT TRIAGE:-
+  		
+  		It's like a meeting. Let me tell you.
+  		Suppose QA will raise a defect without giving severity & priority. Then, 
+  		there will be defect triage meeting conducted once or twice in a week,
+  		where QA Manager, Product Owner, Development Manager & 	who raised the 
+  		bug in this week, will discuss & will give the severity & priority.
+  						
+  						
+  		When developer fix a bug we need to run all the test cases related to that
+  		specific fix which we call regression testing so that it confirms that
+  		the developer did not introduce a new bug and the new fix did not change
+  		the existing functionality or story or product.
+  		
+  		Ask developer what are the codes he has touched and run test cases related 
+  		to that specific sides. 
+  		
+  		
+  			
+  					""""""" LECTURE 43 """""""""""
+  		
+  		
+  		REGRESSION TESTING:-
+  		
+  		When we make a change in our existing application, we re-run our functional- 
+  		non functional tests to ensure that the new changes did not affect the existing
+  		software.
+  		
+  		For regression testing, automation testing is recommended in Agile.
+  		
+  		Regression testing, automation testing is recommended before every release.
+  		
+  		Suppose, I have to release the product in 1 sprint next Wednesday. Now the 
+  		development is completed on Monday, So if I try to do the manual testing 
+  		it will take a lot of time right? but If I do automation testing at night
+  		before leaving the office, I can check the result in the morning right?
+  		
+  		After a change in application, regression testing should be done is some
+  		specific areas such as 
+  		
+  		->	Test cases which has frequently defects.
+  		
+  		->	Critical functionality such as for a woo commerce web site, make sure 
+  			the customer can add product to the cart, buy product to the , all the
+  			products are available after a small change in payment method like added
+  			master card in payment.
+  			
+  		->	Integration test cases 
+  		
+  		
+  						""""""" LECTURE 44 """""""""""
+  						
+  						
+  		SMOKE TESTING:- 
+  		
+  		Smoke testing and regression testing almost similar but difference is in 
+  		between the depth of the scope & duration time to run test.
+  		
+  		Regression test is normally done in high level especially before release
+  		checking all the main functionality are working properly.
+  		
+  		and smoke testing is done when normally developer pushes a new code into the 
+  		server. 
+  		Ideally smoke test should not be longer than 5 minutes.
+  		
+  		
+  		
+  		Sprint 1
+		->	1st commit -edit boxes
+		
+		If home page is loaded (Jenkins to run smoke test when developer push code)
+		and few links are working here and there SMoke/Sanity Testing
+		logos are present
+		courses count 12
+		
+		Less than 5 minutes (jenkin)
+		
+		->	2nd code commit/buttons
+		
+		If home page is loaded
+		and few links are working here and there SMoke/Sanity Testing
+		logos are present
+		courses count 12
+		Less than 5 minutes
+		
+		->	3rd commit form page is ready
+		
+		If home page is loaded
+		and few links are working here and there SMoke/Sanity Testing
+		logos are present
+		courses count 12
+		Less than 5 minutes
+		
+		->	4th commit- data base connection is ready
+		
+		If home page is loaded
+		and few links are working here and there- SMoke/Sanity Testing
+		logos are present
+		courses count 12
+		Less than 5 minutes
+		
+		
+		THE ABOVE IS AN EXMAPLE OF HOW THE SMOKE TEST CAN BE USED IN PROJECT.
+		
+		
+		->	Smoke test is after every build ( whenever developer push the codes)
+		->	Scope of testing is very less , less then 5 minutes
+		->	Automated smoke testing is done in CD/CI development (Nothing but jenkins).
+		->	Smoke Testing is performed to ascertain that the critical functionalities of 
+			the program is working fine
+			
+			
+			SANITY Testing is done to check the new functionality/bugs have been fixed
+			
+  						
+  						""""""" LECTURE 45 """""""""""
+  		
+  		
+  		COMPONENT TESTING:- 
+  		
+  		
+  		When we individually test only a single component such as 
+  		checking that all the elements in register page is showing properly.
+  		email, password, sign button, email validation logo everything is present.
+  		
+  		
+  		But checking that the component is storing the value in database or not, 
+  		by clicking is it navigating to another page or not, is APIs related to
+  		that component is responsing properly or not is an INTEGRATION TESTING.
+  		
+  		
+  		INTEGRATION TESTING is defined as a type of testing where software modules 
+  		are integrated logically and tested as group.
+  		
+  		
+  						""""""" LECTURE 46 """""""""""
+  						
+  						
+  						
+  		Verification :- 
+  		
+  		The process of evaluating  work-products (but not the final product) of a
+  		development phase to determine whether the product meets the business 
+  		requirements. Normally verifying each component in development phase 
+  		according to the business requirements.
+  		
+  		Validation:-
+  		
+  		The process of evaluating the software  at the end or during the development
+  		phase whether is satisfies business requirements.
+  		
+  		
+  		UAT:-
+  		
+  		USER ACCEPTANCE TESTING is done when the product is ready testing the 
+  		system from a client perspective. is the system is working as a client will
+  		use it, is it operating as a operators will operate.
+  		
+  		IF there is any bug in UAT the total fault of QA, because they didn't test 
+  		the software before hand overing to the Business owner.
+  		
+  		
+  		
+  						""""""" LECTURE 47 """""""""""
+  						
+  						
+  		LOAD TESTING:-
+  		
+  		Load testing helps us to study the behaviour of application under various load.
+  		such as in face book there 2 million users trying to access the face book. Using
+  		all the functionality, How face book is responsing, what is the load time 
+  		for home page ? 1 second or 2? If it takes more than expected I need to inform
+  		developer.
+  		
+  		Load testing means for 100 users or for 1000 users how the system is behaving.
+  		
+  		
+  		STRESS TESTING:- 
+  		
+  		Stress testing helps us to observe the stability of the application. The main
+  		intention is to identify the break point of server.
+  		
+  		->	Stress testing means,  N number of users are using the application and 
+  			the number is increasing to check at which point the server crashes or
+  			which point of the application are breaking down.
+  		
+  		
+  		
+  		
+  		
+  					""""""" LECTURE 49 """""""""""
+  		
+  		
+  		FUNCTIONAL TESTING:-
+  		
+  		Functional testing is nothing but the behaviour of the system.
+  		Such as in qaclickacademy.com functional testings are user can log in, can buy
+  		the course, can go to the course, can click in other pages.
+  		
+  		
+  		NON FUNCTIONAL TESTING:-
+  		
+  		This can be operation of the system or reaction in certain behaviours. 
+  		
+  		Such as 
+  		
+  		Performance -	How the system is behaving when 4 million users are trying to 
+  						access the system.
+  		
+  		Scalability -	How the system handles TeraBytes of Data. such tomorrow I am 
+  						going to add a new video in my web site. So, How the system 
+  						will act if it has new more data to store and the users will
+  						perform on that data.
+  						
+  						
+  		Usability -		How convenient to access into the system through mobile, laptop
+  						desktop, tablet , andriod, ios, , I mean different screen how
+  						the system behaves. Such as , You know that the login 
+  						functionality is working , So you are just confirming that the 
+  						login functionality is also working from Mobile.
+  		
+  		Reliability -	How secure is the system. Is it safe to pass the data through
+  						web, can I store data in the database safely.
+  						
+  		Recoverability - What action plans in disaster recovery as we know disaster 
+  						recovery means when we try to change something , it might 
+  						change or after change its not have the positive impact that
+  						should be with its other related parts, those time doing roll
+  						back to back in the position where there wasn't the new change.
+  						
+  								
+  		Security -		There are some OWASP principles which we should follow to 
+  						build a web site.
+  						
+  						
+  		DEVELOPER should take care of this NON-FUNCTIONAL REQUIREMENTS. Developers 
+  		can be anyone in AGILE TEAM, like software developer, QA, anyone.
+  		
+  		
+  		
+  		
+  		
+  					
+  					""""""" LECTURE 50 """""""""""
+  		
+  		
+  		BLACK BOX TESTING :-
+  		
+  		When we don't know the internal architecture, implementation , only test the 
+  		system .
+  		
+  		Black Box Testing is a software testing method in which the internal structure
+  		/design/implementation of the item being tested is NOT known to the tester.
+  		
+  		Acceptance testing, system testing
+  		
+  		
+  		WHITE BOX TESTING :- 
+  		 
+			White Box Testing is a software testing method in which the internal 
+			structure/design/implementation of the item being tested is known to 
+			the tester.
+			
+		UNIT TESTING:- 
+		
+		Testing the pieces of code. such as testing a password method code , 
+		testing a email box taking input method code.
+			
+  		
+  		
+  		
+  			
+  					""""""" LECTURE 54 """""""""""
+  		
+  		
+  		BUZILLA TOOL:- 
+  		
+  		Create a account by Github (israttanjinaidb@gmail.com)
+  		
+  		
+  		1)	Create a NEW BUG
+  		2)	Search for that bug in bugzila tool to confirm that anyone in our team
+  			already have raised that bug or not.
+  		3)	Then create the bug with all the descriptions.
+  		4)	Now, go to the Dash board where you will see the 
+  		5)	FIND THE BUG REPORTED BY YOU.
+  		6)	Now after creating the bug, the product owner or business analyst will
+  			give more details to the bug.
+  			
+  			
+  			IN AGILE Methodology, priority & severity is given by product owner.
+  			
+  			
+  			
+  						""""""" LECTURE 57 """""""""""
+  			
+  							QA BEHAVIOURAL QUESTIONS
+  							
+  							
+  			1)	Suppose you find a bug in production. how would you make sure that the 
+  				same bug is not introduced again?
+  				
+  		ANSWER:- 
+  		
+  			Add uncaught functionality to regression test cases
+			If you have Automated Regression Suite, then write a new Script
+			which validates above functionality. 
+			
+			I mean when I have seen any bug in production I will create a new script 
+			for that particular functionality which will be added in regression 
+			testing. 
+			
+			
+			2)	What do you do when your developer denies that what you filed 
+				IS A BUG?
+				
+		ANSWER:- 
+		
+				Provide Business Documentation reference to support why the 
+				existing functionality is not as per design.
+
+				Involve Product Owner/Business Analyst for Discussion.
+				
+				
+		IF Bug is not reproducible then
+		
+				->	Provide Screenshots of the Bug, Give Time stamp on when you 
+				reproduced this so that Developer can check in Application Logs.
+				->	Provide Test Data you have used for replicating issue.
+				
+				
+			3)	What has been one of your greatest challenges while doing regression
+				testing?
+				
+		
+		ANSWER:- 
+			i)	Test data issue. such as I am making a payment 50  in my credit card 
+				which has a balance of 100 dollar before release in my regression of 
+				this release ( regression is done before every release). So my
+				balance is now 50 dollar. when I will do another regression test 
+				before release those time my  balance will be 0. when I will do 
+				another regression Those time, credit card balance has an extra 50 
+				dollar which can impact other features in credit card such as , 
+				show message for extra balance , give offer to increase credit limit.
+				and so on. So, make sure the credit card balance is at least 100
+				dollar before doing any regression testing. Its challenging 
+			
+  			ii)	Improper selection of regression test cases might skip a major 
+  				regression bug or defect.
+  		
+  		
+  			4)	Enlist some of the key challenges that are faced while performing 
+  				Software Testing?
+
+		ANSWER:- 
+				Data Issues,
+				Environment Available,
+				Using right set of tools
+				
+				
+			5)	 FUNCTIONAL & NON-FUNCTIONAL TESTING?
+			
+			
+		
+		ANSWER:- 
+				  Functional testing, system works as it expected. 
+				  & non functional testing is, How well the system performs within 
+				  design and resource constrains.
+				  
+				  
+			6)	What are the different levels of testing?
+			
+			
+		ANSWER:-
+				Unit Testing, Integration Testing, System Testing, Acceptance
+				Testing.
+				
+			
+			7)	What are the drawbacks of the Agile implementation/methodology 
+				that you faced?
+				
+		ANSWER:- 
+				Sprints are usually very deadline constrained (2-3 weeks).
+				Documentation is not the priority as requirements are changing day
+				by day.
+				Frequent change in requirements.
+				
+				
+			8)	Explain what will be your reaction if a project you had been working 
+				got Sudden change in its deadline?
+		
+		ANSWER:-
+				
+				->	As a QA Engineer, Be open on your thoughts if you can deliver the
+				project with QA Sign off covering all test cases.
+				
+				->	If Pre release is must, then discuss the opportunities of 
+				increasing QA Resources or possibility of partial product delivery.
+				
+				->	You have the power to hold QA Sign off if you are not satisfied 
+					with quality of product which eventually stops the release date.
+			
+  			9)	What is the difference between Smoke testing and
+				Sanity Testing?
+			
+		ANSWER:-
+		
+				SANITY TESTING is a kind of Software Testing performed after 
+				receiving a software build, with minor changes in code, or 
+				functionality, to ascertain that the bugs have been fixed and no 
+				further issues are introduced due to these changes.
+
+				SMOKE TESTING is a special type of testing performed on Software build
+				to check the critical functionalities of the program.
+				
+			10)	If a small section of code in application is updated?
+				What is your Test approach in validating it?
+				
+		ANSWER:-
+			
+				The developer who has changed or fix the issue, I will ask him/her
+				what are the areas of the code he/she has touched. Suppose, there is 
+				a broken ancher(a) link in foot left side. So, developer , fix 
+				that and When I asked what ever he had touched he told me that, he 
+				touched footer left section where there were 5 links of social
+				media among these the face book link wasn't working and he fixed it.
+				As a QA I will Go and tes all the links of social media is working 
+				or not as he has touched footer left side only.
+				
+			11) Differentiate Ad-hoc Testing and Exploratory
+				Testing?
+
+		ANSWER:-
+			
+				Adhoc testing Includes learning the application first and then
+				proceeding with the testing process.
+
+				Exploratory testing form of testing includes learning the application
+				while testing.
+  		
+  			12) What are your daily activities as a member of automation tester in
+  				your office?
+  				
+  		ANSWER:-
+  				
+				• Running Smoke Suite on daily Basis and sending the mail to team
+				on health of the application.
+				
+				• Verify Defects Assigned to you and take appropriate Actions
+				• Working on Manual and Automation testing for the stories in 
+				Current Sprint.
+				
+				
+			13)	How do you select regression test cases or form the
+				regression test suite?
+
+
+
+				- Include the test cases that verify core features of the application
+				
+				- Include the test cases for functionalities that have undergone 
+				recent changes.
+				
+				- Include the test cases that have frequently yielded bugs.	
+				
+			
+		
+			14)	What is the first action you perform as a tester
+				when application throws any weird Errors?
+				
+		ANSWER:- 
+				- Open Developer tools-> Check in Console for any Java Script Errors
+				- Open Network Tab-> And see if any request Responses are failed
+				- Verify Application logs to understand the actual issue
+				
+				
+				
+				
+						""""""" LECTURE 63 """""""""""
+				
+		TEST PYRAMIDS
+		
+		UI Testing always takes a lot of time compare to UNIT TESTING, INTEGRATION
+		TESTING, API TESTING.
+		
+		So, in test pyramids normally, suppose if I want to test for sign up page,
+		I need to fill Full name, email, Password, then sign up button.
+		which means If I want to test the Full Name box, I have initiate the browser,
+		go to the sign up page, send keys to Full Name Box  with valid name or invalid
+		name.
+		
+		Instead of that I can go Unit Testing for that Full Name ( UNIT Test is done
+		by developer). The method which is used for the Full Name , I can send 
+		different parameters such as valid name, invalid name to check that the method
+		is working properly or not. So, it will be time consuming , as UI automation
+		test will take time for that at least 1 minute where the unit testing I mean
+		testing the FUll Name method will take a few miliseconds.
+		
+		Same, as If the Sign up page has a API then I can test the API that is it 
+		taking the correct name or not , or correct password or not, correct email
+		or not by sending value by XML or JSON.
+		
+		Test Pyramids is done by following priority
+		
+		First, Unit Testing I mean each piece of code testing,
+		Then, Component Testing or Integration Testing.
+		Then, API Testing
+		Then, UI Testing
+				
+				
+				
+				
+				
+				

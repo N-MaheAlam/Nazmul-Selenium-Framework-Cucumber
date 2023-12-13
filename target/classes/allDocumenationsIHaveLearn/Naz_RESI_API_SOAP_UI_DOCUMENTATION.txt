@@ -1,0 +1,805 @@
+
+
+		
+				""""" LECTURE 02 """""""
+		
+	
+	WEB Services :- 
+	
+=>	It is a method of communication between two applications. It could be
+	two electronics devices such as mobile and web apps. Web Services are
+	 nothing but APIs. method of connecting two applications.
+	 
+=>	 Example : Suppose Air Canada is a flight booking web site. So, after
+	 customer book flights it will show the available hotels near Toronto
+	 airport. But hotel is not Air Canada's business. So the want to inte-
+	 grate their web site code with another hotel company to show the 
+	 hotel options after the ticket booking. So Air Canada goes Hotels.com
+	 and ask for code to integrate. But Air Canada is developed in Java
+	 and Hotels.com developed in Dot net. There will be a conflict between
+	 them. So, Web services come to the picture to solve this problem.
+	 
+=>	 WEB SERVICES act as mediator. So now, Web services can talk to the 
+	 hotels.com and give the hotel name to Air Canada web site. 
+	 
+=>	 Web Services can be in XML for or in JSON. REST API is JSON form and 
+	 SOAP UI is in XML form.
+	 
+	 
+->	How twitter APIs tweets comes to the to a web site. The website use 
+	the tweeter API. 
+	 
+	 
+	 			""""" LECTURE 03 """""""
+	 			
+	 			
+	 
+=>	2 types of web services SOAP(Simple object Access Protocol) UI and 
+	REST API.
+	
+	 -> SOAP UI communicate through SOAP protocol
+	 -> REST API communicate through REST Style.	 
+	 
+	 -> SOAP UI tool is used to test web services 
+	 -> And SOAP is a protocol to use sending and receiving messages.
+	 
+	 
+=>	 A SOAP message has envelope, header, body , fault
+
+	Go to, below web site 
+	
+	 https://www.ibm.com/docs/en/
+	integration-bus/10.0?topic=soap-structure-message	 
+	 
+	 you can see a structure of SOAP  message.
+	 
+
+	 
+	 				""""" LECTURE 04 """""""
+	 				
+=> WSDL :- Web services description language. It's an xml document.
+	
+	
+	->	Without WSDL file, you can not test anything. 
+	->	We have to import SOAP WSDL file to start the test. WSDL is a heart
+		of SOAP UI services.
+		
+		
+		
+		
+					""""" LECTURE 05 """""""
+		
+->	First, you want to test a web services you need a contract of that web
+	service.
+	
+		->	You need to go through the contact and find how many operations
+			are there ( inside the "binding" xml tag there is "operation"
+			tag.
+		->	Now, you need to send SOAP message one of its operation to get 
+			the response.
+		->	So, you create a SOAP message and you pass your inputs and send
+			it to the operation of its web services.
+		->	So, web service talks to the code, give you response which will
+			you publish in your web site.
+	
+	Suppose client will say there are some SOAP web services to test , first 
+	this to ask give me the WSDL.
+	
+		->	SOAP message is a XML document which is used to transmit your 
+			data communication protocol. WSDL is also a XMl document which 
+			describes how to connect and make request to an WebServices.
+	
+		->	Suppose every restaurant has menu which is a WSDL but how 
+			I talk with the server about the order , the talking is SOAP
+			protocol.
+	
+	
+				""""" LECTURE 07 """""""
+				
+		Download SOAP UI From there official web site and its easy 
+		installation.
+			
+		->	https://www.soapui.org/getting-started/
+			installing-soapui/installing-on-mac/	
+			
+						LECTURE 09
+						
+		->	Create a new SOAP Project.
+		
+		->	Give name , & import WSDL file . Then keep everything same. it will 
+			generate automatic something.
+	 
+	 			""""" LECTURE 10 """""""
+	 			
+	 	->	Right click on the project then create test suite.
+	 	
+	 	1)	Then create test case 
+	 	2)	Then create steps
+	 	
+	 	
+	 			""""" LECTURE 12 """""""
+	 			
+	 			
+	 ->	We just tested the web Services by manually, such as 
+	 	
+	 	i)	we created a SOAP project by giving name and WSDL file 
+	 		link.
+	 	ii)	Then we have seen different operations inside the SOAP
+	 		which is marked by "?" question sign. 
+	 	iii)we then put the value , run it and checked the result in 
+	 		in xml format.
+	 		
+	 		
+	 ->	But now, suppose our client will give us some validation and 
+	 	we need to valid all the assertions.
+	 	
+	 	So, when we will run a test step , after running the step
+	 	we can provide a lot of assertions like 
+	 	
+	 	-	HTTP response
+	 	-	SOAP message Response
+	 	-	Contains
+	 	-	Not contains
+	 	-	Response SLA (time to get response)
+	 	-	Xpath match
+	 	-	Security Response.
+	 	
+	 	
+	 			
+	 				
+	 				""""" LECTURE 15 """""""
+	 			=-	Xpath match 
+	 	
+	 	when we try to match the xpath of something like id , 
+	 	we can assert in two ways  from parent to child or direct child
+	 	
+	 	ON assertion , we should always click on declare to get the 
+	 	default assertion then put the xpath 
+	 	
+	 	first put the xpath 
+	 	
+	 	"//parentNode/anotherParentNode/childNode"	
+	 					or
+	 					"//childNode
+	 	
+	 	and below then put the value  suppose 
+	 	
+	 	xpath expression: 
+	 	
+	 	//ns:age
+	 	
+	 	Expect result :
+	 	
+	 	 23  		
+	 ->	 Xpath Assertions,
+	 
+	 	-	exists(//xpath)
+	 	
+	 	xpath expression: 
+	 	
+	 	//exists(//ns:age)
+	 	
+	 	Expect result :
+	 	
+	 	 true
+		-	count(//xpath)
+		xpath expression: 
+	 	
+	 	//count(//ns:age)
+	 	
+	 	Expect result :
+	 	
+	 	 1
+		-	value inside the xml file can be change , to do so
+			such as the id can be changed of an employee. So , for that
+			we put in assertion
+			 => //xpath name , 
+			 
+			 In expected result side button
+			 => then "Select from current"
+			 => change the id into "*"
+			 => click on "Allow wildcards"
+			 => click test 
+			 you will see that content matches 
+			
+	 			""""" LECTURE 16 """""""
+	 			
+	 ->	Till now what ever we did, we inserted the data manually but we can
+	 	insert data from properties which can be defined in test suite or
+	 	test case or test step level.
+	 	
+	 	 To, do So, 
+	 	 1)	 to create a data in test suite level , 
+	 	 	->	click on test suite level, then customer properties
+	 	 		then put name and value.
+	 	 	->	Now, to call this value in test step, remove the question
+	 	 		mark, right click , then get data , suite level, click the
+	 	 		name.
+	 	 		
+	 	 [REMEMBER, if you define the data in test a test step the scope
+	 	  of that data will be limited only into that step. if you define
+	 	  in test suite level , the data can be accessed through all the 
+	 	  test steps]
+	 	  
+	 	   ->	Create data in step level then call in the same way.
+	 	   
+	 	   
+	 	   "IF anything is generic or constant key word in SOAP then 
+	 	   to call the data from that specific level "#"  is used but
+	 	   in normal name that we provide those time we don't use "#"
+	 	   
+	 	   example:
+	 	   
+	 	   --- ${#TestSuite#Name} => calling from TestSuite properties 
+	 	   ---- ${mydata#name} => calling from my data
+	 	   
+	 	   here "mydata" is a properties file where we have stored our 
+	 	   data.
+	 
+	 			
+	 			""""" LECTURE 17 """""""
+	 
+	 
+	 -> We can declare data in any level, then in SOAP Messages , 
+	 	click in the place where I want to insert data then right click,
+	 	then data , then select the level (project, test suite, test case, 
+	 	then click the name or id or what ever to insert data.
+	 			
+	 ->	We can load properties from any external file but make sure the 
+	 	extension is ".properties"
+	 	
+	 	->	 create a properties file like
+	 		id		= nazmul
+	 		dept	= cse
+	 		age		= 28
+	 		
+	 	-> now go to the level (test suite, case, step) then click
+	 	customer properties ,then add external properties file then
+	 	load that file and you will see the magic.
+	 
+	 
+	 			""""" LECTURE 18 """""""
+	 			
+	 			
+	 ->	Create a new test case inside "EmployeeManagement Suite"
+	 	which name is "Employee All operations Test Case"
+	 	and clone all the employee operations steps.
+	 	
+	 	
+	 	Suppose now, when I give the information of get employee in 
+	 	response , I get all the details of that employee. So what I
+	 	want is , I will pull the name from response and I will place
+	 	it in delete employee which means I am not going to put the name
+	 	manually inside the deleteEmployee steps, got it ?
+	 	
+	 	
+	 ->	Now click on getEmployeeDetails then insert step then 
+	 	property transfer as I want to place the information from
+	 	add employees.
+	 	
+	 ->	Now in test case level give a custom property name  only name
+	 	not the value.
+	 -> Now in property transfer we have to give , the name space, xpath,
+	  text()  to grab the value and make it	response .
+	 	which means 
+	 	
+	 	-	create a property transfer in property transfer 
+	 	-	then from where I want to grab the value? from add employee.
+	 		select it from dash board.
+	 	-	then click from REPONSE ( there will be a lot of things like
+	 		password, domain, request. Just select the response.
+	 	-	then put the xpath of name space (ns). You will see that in
+	 		every tag there will be an initial like "ns:", "typ:" or 
+	 		anything just find out where this one is declared then put it
+	 		 in below way.
+	 		 
+	 	[ REMEMBER, it test step we can not create a property.]
+	 	
+	 	
+	 	
+	 	
+	 				""""" LECTURE 19 """""""
+	 =>	Till now we have seen that we can get the data from custom
+	 	properties, external properties file and property transfer.
+	 	
+	 	Another way to property transfer is below code. Let me explain
+	 	
+	 	${ stepNameFromWhereWeWantData#Request#//xpath/text()} 
+	 	
+	 	-	Supposer I want to grab the name from add Employee test step
+	 		and want to put it in get Employee test step.
+	 		
+	 		For that, in get employee step, where I want to grab the name
+	 		from add employee, first, put the step name
+	 		(stepNameFromWhereWeWantData)
+	 		then as I am requesting data put (#Request)
+	 		then parent node xpath (//employee tag/child Name tag)
+	 		then, (/text()).
+	 
+	 		
+	 	-	Don't forget to put the dollar sign ($) and the curly brasis
+	 		So, above code shown the system code 
+	 		
+	 	- put it inside the step where we want to use data of a specific
+	 		another step.
+	 	
+	 	-------${ stepNameFromWhereWeWantData#Request#//xpath/text()}----- 
+	 	
+	 			""""" LECTURE 20 """""""
+	 	
+	 	=>	 Always remember the hierarchy 
+	 		
+	 		project -> test suite -> test case -> test step
+	 		
+	 		
+	 		Now , create a test suite, 4 test cases ( add employee, 
+	 		get employee, delete employee and groovy script) , 4 steps 
+	 		where will be add employee, get employee, delete employee and
+	 		 groovy script need to select. check the functions inside the 
+	 		 SOAP UI tool then you will understand.
+	 		 
+	 		 
+	 		 """"" LECTURE 21 """""""""
+	 	
+	 So, in Groovy script there are log , context, testRunner these 3
+	 methods.
+	 
+	 -	log is used to print something in console.
+	 -	context is used to manipulate data in its test case which means
+	 	context scope is only limited in test cases, it can not use the 
+	 	property of other test cases. 
+	 	
+	 -	testRunner traverse from one test case to another but it has a 
+	 	sequence Suppose, My project is X, my test suite is Y, in my
+	 	test suite there are A,B,C test case. In test case B , a property
+	 	will come from test case C. to get the value I should always 
+	 	traverse from  source step to  source test case, then source test 
+	 	case to main test suite,then  destination test case , then get
+	 	the property.
+	 	
+	 	testRunner.testCaseB.testSuiteY.testCases["C"].getProperty("id")
+	 
+	 log.info(" Hello Nazmul")
+
+	log.info context.expand('${#TestCase#name}')
+	log.info context.expand('${#TestCase#age}')
+	log.info testRunner.testCase.testSuite.testCases
+	["Groovy Add Employee Test Case"].getPropertyValue("id")
+	 
+	 
+	 
+	 
+	 				""""" LECTURE 22 """""""""
+	 	
+	 	
+	 	Always remember the heirachy 
+	 	
+	 	Project > Test Suite > Test Case > Test Step
+	 	
+	 -	To access the value another test case from a source test case
+	 	always code should be like
+	 	
+	 testRunner.testCase.testSuite.testCases["name"].getPropertyValue("")
+	 
+	 -	to access another step from one step always the code should be
+	 
+	 testRunner.testCase.testSuite.testCases["testCase name"].testSteps
+	 ["test step name"].getPropertyValue("property name")
+	 
+	 
+	 -	To set the value we can use same code but instead of "get" put
+	 	"set"
+	 	
+	testRunner.testCase.testSuite.testCases["name"]
+	.setPropertyValue("name","nazmul")
+	
+				
+				""""" LECTURE 23 """""""""
+				
+	
+	->	In Groovy Script we need to call the the xml like the add employee
+		then we need to modify the xml to put value inside it such as
+		employee name, id, depart, age and run. we did it till now 
+		manually. Now we are going to do it in automation. To Do so,
+		
+		1) in add employee step there is a custom property which is 
+		"Request" we need to call through test Runner.
+		
+		
+		testRunner.testCase.testSuite.testCases["Add Employee Test Case"]
+		.getProperty("Request")
+		
+		2) put the above code in a variable.
+		
+		// def is to declare variable.
+		def addRequst = testRunner.testCase.testSuite.testCases
+						["Add Employee Test Case"].getProperty("Request")
+	
+	
+		3)	import  the "XMLHolder" class in Groovy Script in the top like
+			java
+			
+			
+			--------------
+			
+	import com.eviware.soapui.support.XmlHolder
+	import com.eviware.soapui.impl.wsdl.testcase.WsdlTestRunContext
+
+	
+	log.info(" Hello Nazmul")
+
+	log.info context.expand('${#TestCase#name}')
+	log.info context.expand('${#TestCase#age}')
+	
+	log.info testRunner.testCase.testSuite
+	.testCases["Groovy Add Employee Test Case"].getPropertyValue("id")
+
+ 	log.info testRunner.testCase.testSuite
+ 	.testCases["Groovy Get Employee Test Case"]
+ 	.getPropertyValue("country")
+ 	
+ 	log.info testRunner.testCase.testSuite
+ 	.testCases["Groovy Add Employee Test Case"]
+ 	.testSteps["Groovy Add Employee Step"].getPropertyValue("AuthType")
+
+//pulling the Request property from test Step "Groovy Add Employee Step"
+	def addReq = testRunner.testCase.testSuite
+	.testCases["Groovy Get Employee Test Case"]
+	.testSteps["Groovy Add Employee Step"]
+	.getPropertyValue("Request")
+
+//getting the property value of name from traversing child to 
+//parent and parent to child where name is located
+	def name1 	= testRunner.testCase.testSuite
+	.testCases["Groovy Get Employee Test Case"].getPropertyValue("name")
+
+//getting the property value of id from traversing 
+//child to parent and parent to child where id is located
+	def id1 	= testRunner.testCase.testSuite
+	.testCases["Groovy Get Employee Test Case"].getPropertyValue("id")
+
+//getting the property value of age from traversing child to parent 
+//and parent to child where age is located
+	def age1 	= testRunner.testCase.testSuite
+	.testCases["Groovy Get Employee Test Case"].getPropertyValue("age")
+
+// this XmlHolder class will help us to modify the xml the we have 
+//got from Request
+def xmlAdd = new XmlHolder(addReq)
+
+
+// going through the xpath of name, id, age and putting the values from
+// the custom property of test case "Groovy Get Employee Test Case"
+
+	xmlAdd.setNodeValue =("//typ:name", name1)
+	xmlAdd.setNodeValue =("//typ:id", id1)
+	xmlAdd.setNodeValue =("//typ:age", age1)
+
+	// direclty putting "CSE" value in department xml
+	xmlAdd.setNodeValue =("//typ:addEmployee/typ:Department","CSE")
+
+	def newAddXml = xmlAdd.getXml()
+
+	// now setting up the new formated xml file into the step
+	testRunner.testCase.testSuite.testCases
+	["Groovy Get Employee Test Case"]
+	.testSteps["Groovy Add Employee Step"]
+	.setPropertyValue("Request",newAddXml)
+
+
+
+
+// this below code is to trigger the run button of Groovy Add Employee Step steps.
+def addTestStep-testRunner.testCase.testSuite.testCases["AddEmployee"] .testSteps["add"]
+def contextAddEmployee = new WsdlTestRunContext(addTestStep);
+addTestStep.run(testRunner,contextAddEmployee)
+	
+	
+	
+					""""" LECTURE 26 """""""""
+	
+	Now, get the employee name and run the get step in different test case
+	by below code------
+	
+	
+	def getReq = testRunner.testCase.testSuite.testCases["GetEmployee"]
+	.testSteps["get"].getPropertyValue("Request")
+	
+	def getEmpxml = XM1Holder(getReg)
+	
+	getEmpxml.setNodeValue("//typ:getEmployee Details/typ:employeellame",
+	name)
+	
+	def newgetEmpxml = getEmpxml.getXml()
+	
+	testRunner.testCase.testsuite.testCases["Get Employee"]
+	.teststeps["get"].setPropertyValue("Request",newgetEmpxml)
+	
+	def getTestStep = testRunner.testCase.testSuite.
+	testCases["Get Employee"].testSteps["get"];
+	
+	def contextGetEmployee = new WadlTestRunContext(getTestStep);
+	
+	getTestStep.run(testRunner,contextGetEmployee) 
+	
+	-------------------------
+	
+				""""" LECTURE 27 """""""""
+	
+	This lecture is totally about end to end automation of SOAP UI
+	by Groovy scripting language. WATCH the code properly
+	
+	
+	So, I add employee by groovy script, I get employee details by 
+	groovy script Now, I will match the response from get employee
+	to add employee which we call assertion.
+	the below code is for assertion
+	
+	---------
+	// Validation -
+	def getRes = testRunner.testCase.test Suite
+	.testCases["Get Employee"].testSteps["get"]
+	.getPropertyValue("Response")
+	
+	def getEmpRes = new XmlHolder(getRes)
+	def Getresponse = getEmpRes.getNodeValue("// ns:name")
+	log.info Getresponse.
+	log.info name1
+	
+	// this name1 has come from "Groovy Get Employee Test Case" custom
+	//property  name valuewhich we have stored  in "name1"
+	assert Getresponse name1
+	
+	
+	
+					REST API TESTING BY SOAP
+						
+					
+	-	JSON & XML are the representation of data in specific format.
+					
+						
+	-	End point/Base URL :- is the place where the APIs will sit on.				
+						
+			GET		- to retrive something from server.
+			POST 	- to store something in server
+			PUT 	- to update something in server.		
+						
+					
+					www.google.com/maps
+					
+					www.google.com - Base URL
+					maps - resources	
+					
+		2 types of parameters path parameter and query parameter.
+		
+		
+		path parameter:-
+			
+			www.google.com/maps/12233311
+		
+		query parameter:- 
+			
+			www.google.com/maps?sort_by=202202/22
+					
+		-In query parameters there is always question mark(?)
+						
+						
+	FOR TESTING REST API we will always have a contract.
+	
+				
+	
+				""""" LECTURE 34 """""""""
+	
+	 Like SOAP UI , we can use different types of assertions in REST
+	 API
+	  such as
+	  
+	  -	contains
+	  -	HTTP validation
+	  -	HTTP invalidation
+	  -	JSON existence path mismatch
+	  
+	  
+	  Like groovy script we also have script assertion in REST
+	  
+	  but in grooy there are log , context and testRunner in 
+	  REST API scripting log, context and messageExchange
+	  
+	  
+	  how we write the script in REST
+	  
+	  ---------------
+	  import groovy.json.JsonSlurper
+
+// I am collecting the json reponse, only just the content of 
+//that JSON body ( there are also header, body, payload in a JSON message) 
+def respon = messageExchange.response.responseContent
+
+// creating an nee JsonSlurper object to parse the respon variable
+def jsn = new JsonSlurper()
+
+// now in jsnParse variable I am only parsing the text of "respon" variable
+def jsnParse = jsn.parseText(respon)
+
+// printing the place_id that we got from response
+log.info jsnParse.place_id
+
+// validating that if the "status" reponse message is "OK"
+assert jsnParse.status == "OK"
+
+
+// Now, storing the place_id into the test case "Post Location Test Case"
+// in cutome property, check it 
+context.getTestCase().setPropertyValue("place_id",jsnParse.place_id)
+	 
+	 
+	 		""""" LECTURE 35 """""""""
+	 
+	 
+	 To call from custom property  we know how to call,
+	 
+	 From Test Case - ${#TestCase#PropertyName}
+	 From Test Step - ${#TestCase#PropertyName}
+	 
+	 
+	 Now, We add the place in POST Location Step , now put 
+	 ${#TestCase#place_id} in GET Location Step & in 
+	 
+	 DELETE Location Step also in JSON code 
+	 
+	 in side it put
+	 
+	 {
+    "place_id":"${#TestCase#place_id}"
+	 }
+	 
+	 NOW, run the whole test case and it will finish successfully
+	 
+	 
+	 		""""" LECTURE 39 """""""""
+	 
+	 In SOAP we did assertion in many ways and in REST there are simillar
+	 
+	 except showing the system of JSON.
+	 
+	 JSON Always traverse from parent to child 
+	 
+	 {5} - it means 5 object 
+	 [100] - it means 100 of objects array index 
+	 
+	 ALWAYS use a JSON ONLINE editor to understand the JSON format 
+	 
+	 
+	 "parent.child.tagName"
+	 
+	 JSON PATH MATCH
+	 JSON PATH COUNT
+	 
+	 
+	 		
+	 		-------END TO END FRAMEWORK-------
+	 
+	 
+	 				""""" LECTURE 42 """""""""
+	 
+	 
+	 For SOAP web services , company will give me an xml file
+	 or a WSDL file.
+	 
+	 For REST API, I have build from scretch  means I will have a document
+	 
+	 I have to build every thing based on that document (contract file)
+	 
+	 
+	 Now, build all the REST API code for Library,
+	 
+	 For every POST, GET, PUT, DELETE I have organise the project.
+	 
+	 POST	-	Create a POST with end point "http://216.10.245.166"
+	 		-	give the post resources.
+	 		-	give the JSON code for POST from contract file, then 
+	 			see the response.
+	 		
+	 GET	-	Create a GET with end point "http://216.10.245.166"
+	 		-	give the GET resources.
+	 		-	give the JSON code for GET from contract file , then
+	 			see the response.
+	 DELETE	-	Create a POST (we can use POST for DELETE also)  with
+	 			end point "http://216.10.245.166"
+	 		-	give the GET resources.
+	 		-	give the JSON code for GET from contract file , then
+	 			see the response.
+	 PUT	-	Create a POST (we can use POST for PUT also)  with
+	 			end point "http://216.10.245.166"
+	 		-	give the GET resources.
+	 		-	give the JSON code for PUT from contract file , then
+	 			see the response.
+	 		
+	 		
+	 Then create test suite where test cases will be created and test 
+	 steps automatically.
+	 
+	 
+	 -	create a Test Suite level "end point" &"author" property and 
+	 	call it in add(POST) book and get(GET) book steps.
+	 
+	 Now, I will check that the book that we added is showing there 
+	 or not by getting the response from the script below
+	 
+	 -------------------------------
+	 
+	 
+	import groovy.json.JsonSlurper;
+	// just declaring a boolen value
+	boolean flag;
+	// taking the response content and storing in 'res' variable
+	def res = messageExchange.response.responseContent;
+
+	// parsing the text to manipulate by JsonSlurper class & 
+	//importning the package
+	def jsResponse = new JsonSlurper().parseText(res);
+
+	// it will go through every index of reponse 
+ 	for( int i = 0; i<2; i++)
+ 	{
+ 	// if there is a 'isbn' value of 'bad123' then the boolean
+ 	// flag will be true
+ 	if(jsResponse.isbn[i] =="bad123"){
+ 		flag = true;
+ 	}
+ 	}
+
+  assert true == flag;
+	 
+	 
+	 
+	 ------------------------
+	 
+	 Now, we added the book, get the book & now we will delete the book
+	 
+	 
+	 we used property transfer in SOAP web services. We can also use the 
+	 same property transfer in REST API testing
+	 
+	 -	Now, grab the ID from POST BOOK's response. How we will do that.
+	 
+	 	1) first create a property transfer in POST BOOK step.
+	 	2) In "SOURCE" take from POST BOOK RESPONSE the ID 
+	 	3) In "DESTINATION" put the test suite name.
+	 	4) Don't forget to create a custom property with the name of 
+	 	   "ID" in test suite level.
+	 	5) Now in DELETE step , in JSON editor where we will put the 
+	 	   JSON which we want to delete I mean put the below code
+	 	   
+	 	   
+	 	   {
+ 
+			"ID" : "${#TestSuite#ID}"
+ 
+		   }
+		   
+		 6) Run the whole test suite, you will see the magic. 
+	 	   
+	 			""""""" LECTURE 49 """"""""""""
+	 			
+	 			
+	 Now , we will take 2 project that we have saved in in SOAP. One is 
+	 SOAP project(EMPLOYEE) and another is REST API (Lbrary API)
+	 
+	 
+	 1) Create a java project and import ta SOAP jars from the SOAP APPs.
+	 	If you go inside the SOAP there will be a lib folder where you 
+	 	will see all the jars, just import these. and an important jars
+	 	from the bin.
+	 	
+	 	 Jars need tro bring 
+	 	 
+	 	 i) SOAP jars from lib
+	 	 ii) SOAP version jars from bin
+	 	 iii) jcommander from mvn
+	 	 iv) testng 
+	 	 
+	 	 
+	 	 [REMEMBER in script assertion window we can not use "testRunner"
+	 	 but in groovy script window we can use ]
+	 

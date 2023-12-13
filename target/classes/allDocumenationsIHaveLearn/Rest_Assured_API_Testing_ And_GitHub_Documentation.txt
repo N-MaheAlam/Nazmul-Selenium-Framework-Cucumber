@@ -1,0 +1,429 @@
+						
+						
+						
+					"""""" LECTURE 02 """""""""
+
+->	When comes REST API in picture?
+
+	=	Suppose, there is web site call mariyothotel.com which has the 
+		information about its hotel, such as location, rooms, facilities.
+		There are so many popular web sitesuch as trivago.com , hotels.com, 
+		booking.com which shows the hotels in different cities. 
+		
+		So, trivago.com wants the rooms availability of mariyothotel.com.
+		should mariyothotel.com give all the codes to the trivago.com to 
+		see the availability or trivago should send something such as method
+		to the mariyot and mariyot will verify that and will replay with the 
+		available room. Now, the REST API comes to picture. trivago will 
+		request for home through REST API and mariyot will response that.
+		
+		
+		Another example is most of the client (what we see in a web site) 
+		side is made different platform such as angular.js, node.js and so
+		on. but popular or banking web sites back end is made of java as 
+		java is the most secure one. So, how the front end and back end will
+		communicate with each other as they are made in different platforms?
+		
+		Here REST API comes to picture where front end and back end will 
+		communicate by REST API.
+		
+		
+		
+					 """""" LECTURE 04 """""""""
+					 
+		End Point:- where the APIs are located.
+		
+		GET - get the date
+		POST- Add
+		PUT - Update 
+		DELETE - Delete something
+		
+		
+		
+					"""""" LECTURE 05 """""""""
+					
+					
+		Resource
+		
+		In APIs there are 2 types of parameter such as path parameter and
+		query parameter.
+		
+		Path Parameter:- It is typically use to point a specific resource 
+		in a collection. In path parameters normally there are slash 
+		
+		www.google.com/maps/122333
+		
+		Query Parameters :- used to sort or filter the resources.
+		In Query parameters there will be a "?" question mark.
+		
+		www.google.com/maps?nearme
+		
+		
+		Headers/Cookies:
+		Headers represent the meta-data associated with the request and 
+		response.In layman terms,we were sending Additional details to API to
+		process our request.
+		Example:Authorization details
+
+
+		End Point Request URL can be constructed as below:-
+		
+		Base URL/resource/(Query/Path)Parameters
+		
+		
+		
+		End point: Address where API is hosted on the Server.
+
+
+
+		HTTP methods which are commonly used to communicate with Rest API’s 
+		are
+
+		GET, POST, PUT, and DELETE
+
+		GET- The GET method is used to extract information from the given 
+		server using a given URI. While using GET request, it should only 
+		extract data and should have no other effect on the data. 
+		No Payload/Body required
+
+		How to send input data in GET?
+		Ans: Using Query Parameters
+
+
+		POST- A POST request is used to send data to the server, 
+		for example, customer information, file upload, etc. using HTML 
+		forms.
+
+		How to send input data in POST?
+		Ans: Using Form Parameters /Body Payload
+
+
+
+
+		PUT- Replaces all current representations of the target resource with
+		the uploaded content.
+
+		DELETE- Removes all current representations of the target resource 
+		given by a URI.
+
+
+
+		Resources:
+		Resources represent API/Collection which can be accessed from the 
+		Server
+
+		Google.com/maps
+		google.com/search
+		google.com/images
+
+
+		Path Parameters:
+		Path parameters are variable parts of a URL path. They are typically 
+		used to point to a specific resource within a collection, such as a 
+		user identified by ID
+
+		https://www.google.com/Images/1123343
+		https://www.google.com/docs/1123343
+		https://amazon.com/orders/112
+
+		https://www.google.com/search?q=newyork&oq=newyork&aqs=
+		chrome..69i57j0l7.2501j0j7&sourceid=chrome&ie=UTF-8
+
+
+
+		Query Parameters:
+		Query Parameter is used to sort/filter the resources.
+
+		Query Parameters are identified with?””
+
+		https://amazon.com/orders?sort_by=2/20/2020
+
+
+
+		Headers/Cookies:
+
+		Headers represent the meta-data associated with the API request and 
+		response. In layman terms, we were sending Additional details to API 
+		to process our request.
+		Example : Authorisation details
+
+
+		End Point Request URL can be constructed as below
+		Base URL/resource/(Query/Path)Parameters
+		
+		
+		
+		
+						"""""" LECTURE 126 """""""""
+						
+		GIT VS GITHUB
+		Git is a version control system that lets you manage and keep track of 
+		your source code history. GitHub is a cloud-based hosting service that 
+		lets you manage Git repositories.
+		
+		-> Download Git in your local system.
+		-> Keep everything default & make sure it is selected that " use git from
+			Command prompt or terminal"
+		
+						"""""" LECTURE 127 """""""""
+						
+		->	Sign up in GitHub
+		
+		->	go to repository, now create a new repository
+		
+		->	Create a git repository as Demo. make in private or public its 
+			up to you.
+			
+			
+		-> Now go to terminal , write down the below code
+		
+			Before any operation gits, need to know how I am.
+		
+			1)	--> git config --global user.name "nazmul"  <--
+				
+			=	giving a global name so that I can access from any where with my 
+				machine.
+				
+				
+			2)	--> git config --global user.email "nmahealam@gmail.com" <--
+			
+			=	giving a email also to access from anywhere.	
+				
+				
+				
+						"""""" LECTURE 129 """""""""
+						
+		->	Now, create a folder in the local machine and initiate it in 
+			terminal like below or where is your project? go to that folder 
+			from terminal by giving the path of that folder like 
+			"cd folderPath" then enter.
+			
+			3)	-->	cd folderName <---
+				
+			=	it will go to the folder or you can open my right clicking the 
+				folder then "open the folder in terminal" click. Now, right the 
+				below code 
+				
+			4)	--> git init <---
+			
+			=	it will initate a hidden folder with extension ".git". we won't
+				be able to see it but once we unhide all the hidden file then 
+				it will show. 
+				When we run the command it will show a successful message 
+				
+			"	Initialized empty Git repository in /Users/nazmulmahealam
+				/Desktop/NazGitDemo/.git/	"
+				
+				
+			5)	--> git add * <---
+			
+			=	this is called stagging or first level of commit. Remember 
+				Github only takes committed code. To go to the commit stage first
+				we need to do stagging (git add * ) [ if we want to add all the 
+				files] (git add <fileName>) [ if we want to add any specific 
+				files]
+				
+			6)	--> git commit -m "successful any message"
+			
+			
+			=	This is the commit stage from where the github will accept code.
+			
+				Any file first need to put in stagging (git add ----) then commit
+				that file ( git commit -m )
+				
+				
+				
+					"""""" LECTURE 131 """""""""
+				
+		
+		
+			7) -->	git remote add origin 
+					https://github.com/N-MaheAlam/GitDemo.git <--
+					
+				=	we have initiate the code ,  add the code , commit the code
+					now we need to show where to put the code. The above code 
+					will show the path of github to git to upload the code. Now
+					we need to upload or push the code.
+					
+					[ Then it might ask you for the credentials of your github
+					user name & password. but if you already have given, it won't
+					ask you]
+					
+			
+			8)	-->	git push origin master	<---
+			
+				=	Now , you will see that it will ask for credential (github 
+					user ID & password). Once you give it that it will push the 
+					code automatically. [But in my system it will not ask as I 
+					Have already given the credential earlier.
+				
+				
+			
+			-> Go to your profile in github then you will see the projects.	
+				
+				
+				
+				
+						"""""" LECTURE 132 """""""""
+				
+		When we want to first download something from github we will use 
+			
+			"git clone addressOfThatProject"
+			
+			-->	git clone 	gitHubAddressOfThatProject <---
+			
+		
+		
+		-> Now, Open the downloaded (cloned) project in your Eclipse 
+		
+		-> modify the project as needed 
+		
+		
+		Now,
+		
+		
+		9) Go to the folder using terminal where I my project is located 
+		
+		10) Now same as like always first move it into stagging 
+		
+		
+				-->	git add * <----
+				
+		11) I can see the status what I have modified by
+		
+				-->	git status <----
+				
+		12)	Now commit
+		
+				--> git commit -m "message for commit"
+		
+		13) now puch the new code in origin
+		
+			--> git push origin master <----
+				
+		( as we have already given the origin before  in number 7 steps
+		 then we don't need to at that again just give the amove comments)
+		
+				"""""" LECTURE 133 """""""""
+				
+				
+	So, As I told when we want all the codes for the first time we use clone
+	
+	Now, suppose guy X has changed the code in Oct 18th 3:00 PM and in my machine 
+	I have the code of Oct 17th , So will I clone the code again ? 
+	-NO
+	I will just pull the code from master branch thats it like below
+	
+	
+	->	Go to the folder where our older code is present by terminal 
+	
+	Then perform the below code 
+	
+	
+		13) -->	git pull origin master <--
+		
+		
+		->	this will pull the latest changes in your project and will put it 
+			in your machine.
+			
+		Modify the code then again check with 
+		
+		14)	--> git status <--
+		
+		=	it will show all the changes that I have made and if I change any file
+			mistakenly or need to change any file I can change by seeing the name 
+			in read marks which represents that I have changed.
+			
+		15)	--> git add * <---
+		
+		16) --> git commit -m "messages of new changes "
+		
+		17) --> git push origin master 
+		
+			=> pushing the new modified code in github 
+	 
+		
+					"""""" LECTURE 134 """""""""
+					
+	branch 
+	
+	There is master branch which has all the code, Now the project manager decided
+	to some changes in testing framework. If he does this, we won't be able to run
+	our test in master branch as it will show failure. So what will they do, they
+	will create a new branch ( in professionally it called  develop branch ) which
+	will have all the codes of master branch and we will work on that develop 
+	branch. Once all the test cases are completed, then we will merge the test 
+	code that we have developed in develop branch in master branch.
+	
+	
+	
+	18)  --> git checkout -b <branchName> <-----
+	
+		=	It will create a new branch and will shift from master to that 
+			specific branch name.
+			
+			-----> git branch <-----
+			=	it will give you all the branch name.
+			
+			then same way , 
+			 ->	Modify code
+			 ->	git add *
+			 ->	git commit -m "succesful message"
+			 -> git push origin branchName
+	
+	->	Now as a new developer will pull the code from the github , he will do the 
+		following 
+		
+	19) 
+			-->	git pull origin branchName	<--
+			
+			-->	git checkout branchName	<--
+			
+			= This is for switching from master to branchName(develop) & it will show 
+			all the codes in your machine from the specific branch(develop).
+		
+	
+	Now, as we have developed our new code in new branchName (develop)
+	
+	 Now merge the code between master & develop so that the master branch has 
+	 all the new code.
+	 For to do that 
+	 
+	 
+	 20) Switch to master branch 
+	 
+	 	-->	git checkout master
+	 	
+	 	-->	git pull origin master 
+	 	
+	 	( to check everything is up to date)
+	 	
+	 	--> git merge develop 
+	 	
+	 	-->	git add *
+	 	-->	git commit -m "message"
+	 	-->	git push origin master 
+		
+		
+		Now, suppose we change something in master branch By an software engineer "X"
+					"""""" LECTURE 135 """""""""
+					
+	Merge Conflicts 
+	
+	
+	Suppose, we have pull the code from our master branch and switched to develop
+	branch. Modified some code in develop branch then branch merge the code with
+	the master branch which is OK right. But suppose , if we are modifying some
+	thing from develop branch and someone may be removed any code from master 
+	branch , then when we will try to merge the code it will create merge conflict
+	because in our develop branch we have the clone code of master branch which
+	is not modified but the new master branch has a modified code. Then it 
+	will through the conflict and will show is where is problem. Those time we
+	should talk with the other team members then decide which one to take 
+	modify the code then add , commit, merge , push
+	
+		
+		
+				
+				
+				

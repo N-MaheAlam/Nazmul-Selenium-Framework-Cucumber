@@ -1,0 +1,36 @@
+
+
+							LECTURE - 07
+		
+		
+	1)	Install Node.js because Cypress runs in JavaScript, So, when we want to
+		run java code such as eclipse installation, we download java. 
+		Same when we want to run any java script code, we need to download Node.js
+		
+
+
+	2)	Install, Visual code studio in computer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

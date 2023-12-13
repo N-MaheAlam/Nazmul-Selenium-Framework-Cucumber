@@ -1,0 +1,42 @@
+
+
+
+1)	Download the AutoIt in your system.
+2)	Open the auto it file , there is a script writing I mean editor
+	& a tool to track the box or anything which gives, the path like 
+	a chropath or selector hub in selenium.
+	
+	There is a a lot of windows in a computer like browsers, eclipse,
+	many other applications windows. So, we have to tell the AutoIT
+	to Focus on file uploading window.
+	
+	i)	To give control in auto it write
+	
+		-- ControlFocus("Open", "" , "Edit1")------
+		
+		we will get this from the tracker. "Edit1" is "class" and 
+		"instance" combination which is displayed in tracker.
+		
+	ii) Now, we have to give the path of the exact file which we
+		want to upload.
+		
+		----ControlSetText("Open","Edit1"."Path of the file")-----
+	
+	iii)  This command is to  click on the upload or open button.
+		  
+	----ControlClick("Open","","Button1")------
+	 
+	 iv) Now save the file and then compile it , it will be converted
+	 	 into an ".exe" file.
+	 	 
+	 	 [ Remember , for window uploading use 
+	 	 
+	 	 "http:username:password@URLOfWebsite". For file uploading
+	 	 we don't have anyother options but AUTOIT]
+	 	 
+	 v) Now Write down the selenium code then when we need to call
+	 the file 
+	 use the below code to call the file 
+	--- "Runtime.getRunTime.exce("Path of that file");--------
+	
+	
